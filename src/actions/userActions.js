@@ -23,7 +23,10 @@ export const registerUser = (email, password) => {
       await firebase
         .auth()
         .createUserWithEmailAndPassword(email, password)
-      dispatch(loginSuccess(email, password))
+      // if user is registered, we will login automatically
+      if (firebase.auth().currentUser) {
+        dispatch(loginSuccess(email, password))
+      }
     } catch (e) {
       dispatch(registerFail(e))
     }
@@ -38,6 +41,7 @@ export const authenticateUser = (values) => {
         .auth()
         .signInAndRetrieveDataWithEmailAndPassword(email, password)
       if (firebase.auth().currentUser) {
+        console.log(firebase.auth().currentUser)
         dispatch(loginSuccess(values))
       }
     } catch (e) {
