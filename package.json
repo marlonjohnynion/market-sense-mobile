@@ -4,8 +4,12 @@
   "private": true,
   "devDependencies": {
     "babel-eslint": "^8.2.2",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-preset-react-native": "^4.0.0",
     "cz-conventional-changelog": "^2.1.0",
     "enzyme": "^3.3.0",
+    "enzyme-adapter-react-15": "^1.0.5",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.18.2",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.9.0",
@@ -14,7 +18,7 @@
     "eslint-plugin-react": "^7.7.0",
     "eslint-plugin-react-native": "^3.2.1",
     "eslint-plugin-standard": "^3.0.1",
-    "jest-expo": "25.0.0",
+    "jest-expo": "25.1.0-beta.0",
     "react-native-scripts": "1.11.1",
     "react-test-renderer": "16.2.0",
     "redux-logger": "^3.0.6"
@@ -28,13 +32,18 @@
     "test": "node node_modules/jest/bin/jest.js"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-native|native-base|expo|@expo|react-navigation|native-base-shoutem-theme|@shoutem/theme|@shoutem/animation|@shoutem/ui|tcomb-form-native)"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js"
   },
   "dependencies": {
     "expo": "^25.0.0",
     "firebase": "^4.11.0",
     "native-base": "^2.3.10",
     "react": "16.2.0",
+    "react-dom": "^16.2.0",
     "react-native": "0.52.0",
     "react-redux": "^5.0.7",
     "redux": "^3.7.2",
