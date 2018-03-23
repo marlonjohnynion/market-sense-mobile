@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import ProductView from '../src/components/ProductView'
-import { Image } from 'react-native'
+import ProductView from '../../src/components/ProductView'
+import { Image, Text } from 'react-native'
 
 describe('<ProductView />', () => {
   const product = {
@@ -19,10 +19,18 @@ describe('<ProductView />', () => {
   })
 
   it('renders the component', () => {
-    expect(wrapper.length).toEqual(1)
+    expect(wrapper).toHaveLength(1)
   })
 
   it('renders as expected', () => {
     expect(wrapper).toMatchSnapshot()
+  })
+
+  it('renders the product image', () => {
+    expect(wrapper.find(Image)).toHaveLength(1)
+  })
+
+  it('renders the product and owner meta data', () => {
+    expect(wrapper.find(Text)).toHaveLength(5)
   })
 })
