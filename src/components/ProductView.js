@@ -1,14 +1,14 @@
 import React from 'react'
-import { Image, View, Text, StyleSheet } from 'react-native'
+import { Image, Text, StyleSheet } from 'react-native'
 import {
   Content,
   Container,
-  Button,
   Icon,
   Thumbnail,
   Grid,
   Col
 } from 'native-base'
+import ActionBar from './ProductActionBar'
 
 const ProductView = ({product}) => {
   return (
@@ -19,7 +19,7 @@ const ProductView = ({product}) => {
         <Text style={styles.productTitle}>{product.productTitle}</Text>
         <Grid style={styles.metaGrid}>
           <Col style={styles.ownerMetaIcon}>
-            <Icon name='person' style={{fontSize: 40}}/>
+            <Icon name='person' style={styles.icon}/>
           </Col>
           <Col style={styles.productOwnerMeta}>
             <Text style={styles.productOwner}>
@@ -37,23 +37,7 @@ const ProductView = ({product}) => {
           {product.productDescription}
         </Text>
       </Content>
-      <View style={styles.productBottomBar}>
-        <Grid>
-          <Col style={{flex: 0.6}}>
-            <Text style={styles.productPrice}>
-              {product.productPrice}
-            </Text>
-            <Text style={styles.productRating}>
-              {product.productRating}
-            </Text>
-          </Col>
-          <Col style={{flex: 0.6}}>
-            <Button block success>
-              <Text>Check Availability</Text>
-            </Button>
-          </Col>
-        </Grid>
-      </View>
+      <ActionBar product={product}/>
     </Container>
   )
 }
@@ -73,7 +57,6 @@ const styles = StyleSheet.create({
     fontWeight: '200',
     lineHeight: 25
   },
-  productPrice: {fontSize: 16, paddingTop: 6, fontWeight: '800'},
   productOwner: {fontWeight: '300', fontSize: 16},
   productLocation: {fontWeight: '300', fontSize: 15, marginTop: 3},
   productCategory: {
@@ -82,21 +65,11 @@ const styles = StyleSheet.create({
     marginTop: 5,
     color: '#424242'
   },
-  productRating: {fontSize: 16, fontWeight: '800', color: 'green'},
-  productBottomBar: {
-    bottom: 0,
-    height: 75,
-    paddingTop: 15,
-    paddingRight: 20,
-    paddingLeft: 20,
-    backgroundColor: '#fff',
-    borderColor: 'black',
-    borderTopWidth: 0.3
-  },
   productOwnerMeta: {height: 100, flex: 0.8, paddingTop: 20, marginLeft: 10},
   metaGrid: {marginTop: 20, marginBottom: 20},
   ownerMetaIcon: {height: 100, flex: 0.1, paddingTop: 19},
-  ownerMetaAvatar: {height: 100, flex: 0.3}
+  ownerMetaAvatar: {height: 100, flex: 0.3},
+  icon: {fontSize: 40}
 
 })
 
