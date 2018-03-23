@@ -3,8 +3,7 @@ import firebase from '../common/firebase'
 
 export const loginSuccess = (values) => ({
   type: actions.LOGIN,
-  email: values.email,
-  password: values.password
+  email: values.email
 })
 
 export const loginFail = (error) => ({
