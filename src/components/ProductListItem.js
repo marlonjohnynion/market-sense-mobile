@@ -3,7 +3,7 @@ import { View, Image, Text, StyleSheet } from 'react-native'
 
 const ProductListView = ({product}) => {
   return (
-    <View style={{padding: 20}}>
+    <View style={styles.viewStyle}>
       <Image source={{uri: product.productImageUri}} style={styles.productImage} />
       <Text style={styles.productLocation}>{product.productLocation}</Text>
       <Text style={styles.productTitle}>{product.productTitle}</Text>
@@ -18,8 +18,8 @@ const styles = StyleSheet.create({
   productLocation: {fontSize: 14, marginTop: 8, fontWeight: 'bold'},
   productTitle: {fontSize: 24, fontWeight: 'bold'},
   productPrice: {fontSize: 18, fontWeight: '200', marginTop: 3},
-  productDescription: {fontSize: 16, marginTop: 8}
-
+  productDescription: {fontSize: 16, marginTop: 8},
+  viewStyle: {padding: 20}
 })
 
 export default ProductListView
