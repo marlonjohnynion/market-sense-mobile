@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 import * as userActions from '../actions/userActions'
 import LoginForm from '../components/LoginForm'
 
-const Login = ({state, userActions}) => {
+export const Login = ({state, userActions}) => {
   return (
     <Container>
       <Header/>
