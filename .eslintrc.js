@@ -1,15 +1,12 @@
 module.exports = {
   "extends": [
     "standard",
-    "plugin:jest/recommended"
+    "plugin:jest/recommended",
+    "plugin:react/recommended"
   ],
   "plugins": [
-    "react",
     "react-native"
   ],
-  "ecmaFeatures": {
-    "jsx": true
-  },
   "parser": "babel-eslint",
   "env": {
     "react-native/react-native": true
@@ -18,7 +15,8 @@ module.exports = {
     "react-native/no-unused-styles": 2,
     "react-native/split-platform-components": 2,
     "react-native/no-inline-styles": 2,
-    "react/jsx-uses-vars": 2
+    "react/jsx-uses-vars": 2,
+    "react/prop-types": 0
   },
   "globals": {
     "it": 0,
