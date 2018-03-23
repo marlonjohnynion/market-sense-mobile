@@ -1,6 +1,5 @@
-# MarketSense Mobile
-
 ![Build Status](https://travis-ci.com/ninjaengineers/market-sense-mobile.svg?token=XhqG9x8JhqazdqQwRrUe&branch=master)
+# MarketSense Mobile
 
 ## Philosophy
 
