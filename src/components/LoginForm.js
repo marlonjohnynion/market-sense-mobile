@@ -10,7 +10,7 @@ export const emailField = (props) => {
 export const passwordField = (props) => {
   const {input} = props
   return <Input onChangeText={input.onChange} secureTextEntry={true}/>
-}ß
+}
 
 export const LoginForm = (props) => {
   const { handleSubmit, loginHandler } = props
