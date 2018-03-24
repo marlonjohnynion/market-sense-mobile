@@ -2,17 +2,17 @@ import React from 'react'
 import { Field, reduxForm } from 'redux-form'
 import { Form, Item, Input, Label, Button, Text, Container } from 'native-base'
 
-const emailField = (props) => {
+export const emailField = (props) => {
   const {input} = props
   return <Input onChangeText={input.onChange}/>
 }
 
-const passwordField = (props) => {
+export const passwordField = (props) => {
   const {input} = props
   return <Input onChangeText={input.onChange} secureTextEntry={true}/>
-}
+}ß
 
-const LoginForm = (props) => {
+export const LoginForm = (props) => {
   const { handleSubmit, loginHandler } = props
   return (
     <Container>
