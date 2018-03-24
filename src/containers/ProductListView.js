@@ -6,9 +6,8 @@ import {
 } from 'native-base'
 import { ScrollView } from 'react-native'
 import { connect } from 'react-redux'
-import { Login } from './Login'
 
-const ProductsList = ({products}) => {
+export const ProductsList = ({products}) => {
   return products.map((product) => <ProductListItem key={product.productTitle} product={product}/>)
 }
 
