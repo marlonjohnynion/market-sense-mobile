@@ -1,4 +1,4 @@
-# MarketSense Mobile ![Build Status](https://travis-ci.com/ninjaengineers/market-sense-mobile.svg?token=XhqG9x8JhqazdqQwRrUe&branch=master)
+# MarketSense Mobile [![Build Status](https://travis-ci.com/ninjaengineers/market-sense-mobile.svg?token=XhqG9x8JhqazdqQwRrUe&branch=master)](https://travis-ci.com/ninjaengineers/market-sense-mobile)
 
 MarketSense is a platform the connects local farmers to sell directly to retailers and individuals without the need of other intervening parties who add extra costs to transactions.
 
