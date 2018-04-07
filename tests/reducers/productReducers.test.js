@@ -1,9 +1,9 @@
 import productReducers from '../../src/reducers/product'
 
 describe('Reducers Test: Product', () => {
-  let products
+  let productsList
   beforeEach(() => {
-    products = [
+    productsList = [
       {
         id: 1,
         productTitle: 'Carrots',
@@ -19,8 +19,8 @@ describe('Reducers Test: Product', () => {
 
   it('+++ reducer for showing products', () => {
     let state = {}
-    state = productReducers(state, {type: 'SHOW_PRODUCTS', products: products})
-    const expected = {products: products}
+    state = productReducers(state, { type: 'SHOW_PRODUCTS', products: productsList })
+    const expected = { productsList: [...productsList] }
     expect(state).toEqual(expected)
   })
 
@@ -30,18 +30,18 @@ describe('Reducers Test: Product', () => {
       productTitle: 'Cabbage',
       productDescription: 'Free cabbage from the yard.'
     }
-    let state = {products: [...products]}
-    state = productReducers(state, {type: 'ADD_PRODUCT', product: product})
-    const expected = { products: [...products] }
+    let state = { products: [...productsList] }
+    state = productReducers(state, { type: 'ADD_PRODUCT', product: product })
+    const expected = { products: [...productsList] }
     expected.products.push(product)
     expect(state).toEqual(expected)
   })
 
   it('+++ reducer for selecting product', () => {
     let state = {}
-    const expected = { selectedProduct: products[0] }
-    const selectedProduct = products[0]
-    state = productReducers(state, {type: 'SELECT_PRODUCT', selectedProduct: selectedProduct})
+    const expected = { selectedProduct: productsList[0] }
+    const selectedProduct = productsList[0]
+    state = productReducers(state, { type: 'SELECT_PRODUCT', selectedProduct: selectedProduct })
     expect(state).toEqual(expected)
   })
 })

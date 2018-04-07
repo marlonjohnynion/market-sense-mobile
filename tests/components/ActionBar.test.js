@@ -31,10 +31,6 @@ describe('<ProductActionBar />', () => {
     expect(wrapper.find(ProductPrice)).toHaveLength(1)
   })
 
-  it('renders the product rating', () => {
-    expect(wrapper.find(ProductRating)).toHaveLength(1)
-  })
-
   it('renders the component as expected', () => {
     expect(wrapper).toMatchSnapshot()
   })

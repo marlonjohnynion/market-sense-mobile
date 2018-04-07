@@ -28,23 +28,8 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "function",
     "props": Object {
-      "dispatch": [Function],
-      "products": Array [
-        Object {
-          "productDescription": "Perfect accompaniment for mains and sandwiches. Ideal edible bed for roasted...",
-          "productImageUri": "https://firebasestorage.googleapis.com/v0/b/marketsense-b09f8.appspot.com/o/products%2Fp3.png?alt=media&token=7fd95509-ea2b-4188-b85e-218609d5ee26",
-          "productLocation": "OTON, ILOILO",
-          "productPrice": "₱1500 / 10 kg",
-          "productTitle": "Carrots",
-        },
-        Object {
-          "productDescription": "Pure organic chicken made in Leon's finest poultry laboratories...",
-          "productImageUri": "https://firebasestorage.googleapis.com/v0/b/marketsense-b09f8.appspot.com/o/products%2Fp4.png?alt=media&token=a26df185-c60c-4a5f-a7d8-4a0d331ccf2a",
-          "productLocation": "LEON, ILOILO",
-          "productPrice": "₱1000 / 10 kg",
-          "productTitle": "Organic Chicken Thighs and Legs",
-        },
-      ],
+      "products": undefined,
+      "selectProduct": [Function],
       "store": Object {
         "clearActions": [Function],
         "dispatch": [Function],
@@ -83,23 +68,8 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "function",
       "props": Object {
-        "dispatch": [Function],
-        "products": Array [
-          Object {
-            "productDescription": "Perfect accompaniment for mains and sandwiches. Ideal edible bed for roasted...",
-            "productImageUri": "https://firebasestorage.googleapis.com/v0/b/marketsense-b09f8.appspot.com/o/products%2Fp3.png?alt=media&token=7fd95509-ea2b-4188-b85e-218609d5ee26",
-            "productLocation": "OTON, ILOILO",
-            "productPrice": "₱1500 / 10 kg",
-            "productTitle": "Carrots",
-          },
-          Object {
-            "productDescription": "Pure organic chicken made in Leon's finest poultry laboratories...",
-            "productImageUri": "https://firebasestorage.googleapis.com/v0/b/marketsense-b09f8.appspot.com/o/products%2Fp4.png?alt=media&token=a26df185-c60c-4a5f-a7d8-4a0d331ccf2a",
-            "productLocation": "LEON, ILOILO",
-            "productPrice": "₱1000 / 10 kg",
-            "productTitle": "Organic Chicken Thighs and Legs",
-          },
-        ],
+        "products": undefined,
+        "selectProduct": [Function],
         "store": Object {
           "clearActions": [Function],
           "dispatch": [Function],

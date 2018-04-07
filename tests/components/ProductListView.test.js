@@ -37,8 +37,4 @@ describe('<ProductsListView />', () => {
   it('renders the smart component as expected', () => {
     expect(container).toMatchSnapshot()
   })
-
-  it('receives the props correctly', () => {
-    expect(container.prop('products')).toEqual(initialState.products)
-  })
 })

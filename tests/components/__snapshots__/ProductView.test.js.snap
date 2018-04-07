@@ -29,677 +29,10 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "children": Array [
-        <Image
-          source={
-            Object {
-              "uri": undefined,
-            }
-          }
-          style={
-            Object {
-              "height": 250,
-              "width": null,
-            }
-          }
-        />,
-        <Styled(Content)
-          style={
-            Object {
-              "marginLeft": 20,
-              "marginRight": 20,
-              "paddingTop": 10,
-            }
-          }
+      "children": <withOrientation>
+        <Styled(Container)
           virtual={undefined}
         >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#424242",
-                "fontSize": 16,
-                "fontWeight": "bold",
-                "marginTop": 5,
-              }
-            }
-          >
-            Vegetable
-          </Text>
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#424242",
-                "fontSize": 30,
-                "fontWeight": "bold",
-                "marginTop": 0,
-              }
-            }
-          >
-            Carrots
-          </Text>
-          <GridNB
-            style={
-              Object {
-                "marginBottom": 20,
-                "marginTop": 20,
-              }
-            }
-          >
-            <ColumnNB
-              style={
-                Object {
-                  "flex": 0.1,
-                  "height": 100,
-                  "paddingTop": 19,
-                }
-              }
-            >
-              <Styled(Icon)
-                name="person"
-                style={
-                  Object {
-                    "fontSize": 40,
-                  }
-                }
-                virtual={undefined}
-              />
-            </ColumnNB>
-            <ColumnNB
-              style={
-                Object {
-                  "flex": 0.8,
-                  "height": 100,
-                  "marginLeft": 10,
-                  "paddingTop": 20,
-                }
-              }
-            >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Object {
-                    "fontSize": 16,
-                    "fontWeight": "300",
-                  }
-                }
-              >
-                Marlon John Ynion
-              </Text>
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Object {
-                    "fontSize": 15,
-                    "fontWeight": "300",
-                    "marginTop": 3,
-                  }
-                }
-              />
-            </ColumnNB>
-            <ColumnNB
-              style={
-                Object {
-                  "flex": 0.3,
-                  "height": 100,
-                }
-              }
-            >
-              <Styled(Thumbnail)
-                large={true}
-                source={
-                  Object {
-                    "uri": undefined,
-                  }
-                }
-                virtual={undefined}
-              />
-            </ColumnNB>
-          </GridNB>
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            numberOfLines={7}
-            style={
-              Object {
-                "fontSize": 18,
-                "fontWeight": "200",
-                "lineHeight": 25,
-                "marginTop": 7,
-              }
-            }
-          >
-            Some vegetables
-          </Text>
-        </Styled(Content)>,
-        <ProductActionBar
-          product={
-            Object {
-              "productCategory": "Vegetable",
-              "productDescription": "Some vegetables",
-              "productOwner": "Marlon John Ynion",
-              "productPrice": 5,
-              "productRating": 5,
-              "productTitle": "Carrots",
-              "uri": "https://firebasestorage.googleapis.com/v0/b/marketsense-b09f8.appspot.com/o/products%2Fp0.png?alt=media&token=c305d51d-1b8b-4fbb-bd10-0c03a5c5805d",
-            }
-          }
-        />,
-      ],
-      "virtual": undefined,
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "source": Object {
-            "uri": undefined,
-          },
-          "style": Object {
-            "height": 250,
-            "width": null,
-          },
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "children": Array [
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#424242",
-                  "fontSize": 16,
-                  "fontWeight": "bold",
-                  "marginTop": 5,
-                }
-              }
-            >
-              Vegetable
-            </Text>,
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#424242",
-                  "fontSize": 30,
-                  "fontWeight": "bold",
-                  "marginTop": 0,
-                }
-              }
-            >
-              Carrots
-            </Text>,
-            <GridNB
-              style={
-                Object {
-                  "marginBottom": 20,
-                  "marginTop": 20,
-                }
-              }
-            >
-              <ColumnNB
-                style={
-                  Object {
-                    "flex": 0.1,
-                    "height": 100,
-                    "paddingTop": 19,
-                  }
-                }
-              >
-                <Styled(Icon)
-                  name="person"
-                  style={
-                    Object {
-                      "fontSize": 40,
-                    }
-                  }
-                  virtual={undefined}
-                />
-              </ColumnNB>
-              <ColumnNB
-                style={
-                  Object {
-                    "flex": 0.8,
-                    "height": 100,
-                    "marginLeft": 10,
-                    "paddingTop": 20,
-                  }
-                }
-              >
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  style={
-                    Object {
-                      "fontSize": 16,
-                      "fontWeight": "300",
-                    }
-                  }
-                >
-                  Marlon John Ynion
-                </Text>
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  style={
-                    Object {
-                      "fontSize": 15,
-                      "fontWeight": "300",
-                      "marginTop": 3,
-                    }
-                  }
-                />
-              </ColumnNB>
-              <ColumnNB
-                style={
-                  Object {
-                    "flex": 0.3,
-                    "height": 100,
-                  }
-                }
-              >
-                <Styled(Thumbnail)
-                  large={true}
-                  source={
-                    Object {
-                      "uri": undefined,
-                    }
-                  }
-                  virtual={undefined}
-                />
-              </ColumnNB>
-            </GridNB>,
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              numberOfLines={7}
-              style={
-                Object {
-                  "fontSize": 18,
-                  "fontWeight": "200",
-                  "lineHeight": 25,
-                  "marginTop": 7,
-                }
-              }
-            >
-              Some vegetables
-            </Text>,
-          ],
-          "style": Object {
-            "marginLeft": 20,
-            "marginRight": 20,
-            "paddingTop": 10,
-          },
-          "virtual": undefined,
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "accessible": true,
-              "allowFontScaling": true,
-              "children": "Vegetable",
-              "ellipsizeMode": "tail",
-              "style": Object {
-                "color": "#424242",
-                "fontSize": 16,
-                "fontWeight": "bold",
-                "marginTop": 5,
-              },
-            },
-            "ref": null,
-            "rendered": "Vegetable",
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "accessible": true,
-              "allowFontScaling": true,
-              "children": "Carrots",
-              "ellipsizeMode": "tail",
-              "style": Object {
-                "color": "#424242",
-                "fontSize": 30,
-                "fontWeight": "bold",
-                "marginTop": 0,
-              },
-            },
-            "ref": null,
-            "rendered": "Carrots",
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": Array [
-                <ColumnNB
-                  style={
-                    Object {
-                      "flex": 0.1,
-                      "height": 100,
-                      "paddingTop": 19,
-                    }
-                  }
-                >
-                  <Styled(Icon)
-                    name="person"
-                    style={
-                      Object {
-                        "fontSize": 40,
-                      }
-                    }
-                    virtual={undefined}
-                  />
-                </ColumnNB>,
-                <ColumnNB
-                  style={
-                    Object {
-                      "flex": 0.8,
-                      "height": 100,
-                      "marginLeft": 10,
-                      "paddingTop": 20,
-                    }
-                  }
-                >
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    ellipsizeMode="tail"
-                    style={
-                      Object {
-                        "fontSize": 16,
-                        "fontWeight": "300",
-                      }
-                    }
-                  >
-                    Marlon John Ynion
-                  </Text>
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    ellipsizeMode="tail"
-                    style={
-                      Object {
-                        "fontSize": 15,
-                        "fontWeight": "300",
-                        "marginTop": 3,
-                      }
-                    }
-                  />
-                </ColumnNB>,
-                <ColumnNB
-                  style={
-                    Object {
-                      "flex": 0.3,
-                      "height": 100,
-                    }
-                  }
-                >
-                  <Styled(Thumbnail)
-                    large={true}
-                    source={
-                      Object {
-                        "uri": undefined,
-                      }
-                    }
-                    virtual={undefined}
-                  />
-                </ColumnNB>,
-              ],
-              "style": Object {
-                "marginBottom": 20,
-                "marginTop": 20,
-              },
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": <Styled(Icon)
-                    name="person"
-                    style={
-                      Object {
-                        "fontSize": 40,
-                      }
-                    }
-                    virtual={undefined}
-                  />,
-                  "style": Object {
-                    "flex": 0.1,
-                    "height": 100,
-                    "paddingTop": 19,
-                  },
-                },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "name": "person",
-                    "style": Object {
-                      "fontSize": 40,
-                    },
-                    "virtual": undefined,
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": Array [
-                    <Text
-                      accessible={true}
-                      allowFontScaling={true}
-                      ellipsizeMode="tail"
-                      style={
-                        Object {
-                          "fontSize": 16,
-                          "fontWeight": "300",
-                        }
-                      }
-                    >
-                      Marlon John Ynion
-                    </Text>,
-                    <Text
-                      accessible={true}
-                      allowFontScaling={true}
-                      ellipsizeMode="tail"
-                      style={
-                        Object {
-                          "fontSize": 15,
-                          "fontWeight": "300",
-                          "marginTop": 3,
-                        }
-                      }
-                    />,
-                  ],
-                  "style": Object {
-                    "flex": 0.8,
-                    "height": 100,
-                    "marginLeft": 10,
-                    "paddingTop": 20,
-                  },
-                },
-                "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "accessible": true,
-                      "allowFontScaling": true,
-                      "children": "Marlon John Ynion",
-                      "ellipsizeMode": "tail",
-                      "style": Object {
-                        "fontSize": 16,
-                        "fontWeight": "300",
-                      },
-                    },
-                    "ref": null,
-                    "rendered": "Marlon John Ynion",
-                    "type": [Function],
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "accessible": true,
-                      "allowFontScaling": true,
-                      "children": undefined,
-                      "ellipsizeMode": "tail",
-                      "style": Object {
-                        "fontSize": 15,
-                        "fontWeight": "300",
-                        "marginTop": 3,
-                      },
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                ],
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": <Styled(Thumbnail)
-                    large={true}
-                    source={
-                      Object {
-                        "uri": undefined,
-                      }
-                    }
-                    virtual={undefined}
-                  />,
-                  "style": Object {
-                    "flex": 0.3,
-                    "height": 100,
-                  },
-                },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "large": true,
-                    "source": Object {
-                      "uri": undefined,
-                    },
-                    "virtual": undefined,
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-                "type": [Function],
-              },
-            ],
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "accessible": true,
-              "allowFontScaling": true,
-              "children": "Some vegetables",
-              "ellipsizeMode": "tail",
-              "numberOfLines": 7,
-              "style": Object {
-                "fontSize": 18,
-                "fontWeight": "200",
-                "lineHeight": 25,
-                "marginTop": 7,
-              },
-            },
-            "ref": null,
-            "rendered": "Some vegetables",
-            "type": [Function],
-          },
-        ],
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "product": Object {
-            "productCategory": "Vegetable",
-            "productDescription": "Some vegetables",
-            "productOwner": "Marlon John Ynion",
-            "productPrice": 5,
-            "productRating": 5,
-            "productTitle": "Carrots",
-            "uri": "https://firebasestorage.googleapis.com/v0/b/marketsense-b09f8.appspot.com/o/products%2Fp0.png?alt=media&token=c305d51d-1b8b-4fbb-bd10-0c03a5c5805d",
-          },
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-    ],
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "children": Array [
           <Image
             source={
               Object {
@@ -712,8 +45,8 @@ ShallowWrapper {
                 "width": null,
               }
             }
-          />,
-          <Styled(Content)
+          />
+          <Styled(Container)
             style={
               Object {
                 "marginLeft": 20,
@@ -756,6 +89,7 @@ ShallowWrapper {
             <GridNB
               style={
                 Object {
+                  "flex": 1,
                   "marginBottom": 20,
                   "marginTop": 20,
                 }
@@ -851,7 +185,7 @@ ShallowWrapper {
             >
               Some vegetables
             </Text>
-          </Styled(Content)>,
+          </Styled(Container)>
           <ProductActionBar
             product={
               Object {
@@ -864,35 +198,217 @@ ShallowWrapper {
                 "uri": "https://firebasestorage.googleapis.com/v0/b/marketsense-b09f8.appspot.com/o/products%2Fp0.png?alt=media&token=c305d51d-1b8b-4fbb-bd10-0c03a5c5805d",
               }
             }
-          />,
-        ],
-        "virtual": undefined,
+          />
+        </Styled(Container)>
+      </withOrientation>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <Styled(Container)
+          virtual={undefined}
+        >
+          <Image
+            source={
+              Object {
+                "uri": undefined,
+              }
+            }
+            style={
+              Object {
+                "height": 250,
+                "width": null,
+              }
+            }
+          />
+          <Styled(Container)
+            style={
+              Object {
+                "marginLeft": 20,
+                "marginRight": 20,
+                "paddingTop": 10,
+              }
+            }
+            virtual={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#424242",
+                  "fontSize": 16,
+                  "fontWeight": "bold",
+                  "marginTop": 5,
+                }
+              }
+            >
+              Vegetable
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#424242",
+                  "fontSize": 30,
+                  "fontWeight": "bold",
+                  "marginTop": 0,
+                }
+              }
+            >
+              Carrots
+            </Text>
+            <GridNB
+              style={
+                Object {
+                  "flex": 1,
+                  "marginBottom": 20,
+                  "marginTop": 20,
+                }
+              }
+            >
+              <ColumnNB
+                style={
+                  Object {
+                    "flex": 0.1,
+                    "height": 100,
+                    "paddingTop": 19,
+                  }
+                }
+              >
+                <Styled(Icon)
+                  name="person"
+                  style={
+                    Object {
+                      "fontSize": 40,
+                    }
+                  }
+                  virtual={undefined}
+                />
+              </ColumnNB>
+              <ColumnNB
+                style={
+                  Object {
+                    "flex": 0.8,
+                    "height": 100,
+                    "marginLeft": 10,
+                    "paddingTop": 20,
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "fontSize": 16,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Marlon John Ynion
+                </Text>
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                      "marginTop": 3,
+                    }
+                  }
+                />
+              </ColumnNB>
+              <ColumnNB
+                style={
+                  Object {
+                    "flex": 0.3,
+                    "height": 100,
+                  }
+                }
+              >
+                <Styled(Thumbnail)
+                  large={true}
+                  source={
+                    Object {
+                      "uri": undefined,
+                    }
+                  }
+                  virtual={undefined}
+                />
+              </ColumnNB>
+            </GridNB>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              numberOfLines={7}
+              style={
+                Object {
+                  "fontSize": 18,
+                  "fontWeight": "200",
+                  "lineHeight": 25,
+                  "marginTop": 7,
+                }
+              }
+            >
+              Some vegetables
+            </Text>
+          </Styled(Container)>
+          <ProductActionBar
+            product={
+              Object {
+                "productCategory": "Vegetable",
+                "productDescription": "Some vegetables",
+                "productOwner": "Marlon John Ynion",
+                "productPrice": 5,
+                "productRating": 5,
+                "productTitle": "Carrots",
+                "uri": "https://firebasestorage.googleapis.com/v0/b/marketsense-b09f8.appspot.com/o/products%2Fp0.png?alt=media&token=c305d51d-1b8b-4fbb-bd10-0c03a5c5805d",
+              }
+            }
+          />
+        </Styled(Container)>,
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "source": Object {
-              "uri": undefined,
-            },
-            "style": Object {
-              "height": 250,
-              "width": null,
-            },
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "children": Array [
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Image
+              source={
+                Object {
+                  "uri": undefined,
+                }
+              }
+              style={
+                Object {
+                  "height": 250,
+                  "width": null,
+                }
+              }
+            />,
+            <Styled(Container)
+              style={
+                Object {
+                  "marginLeft": 20,
+                  "marginRight": 20,
+                  "paddingTop": 10,
+                }
+              }
+              virtual={undefined}
+            >
               <Text
                 accessible={true}
                 allowFontScaling={true}
@@ -907,7 +423,7 @@ ShallowWrapper {
                 }
               >
                 Vegetable
-              </Text>,
+              </Text>
               <Text
                 accessible={true}
                 allowFontScaling={true}
@@ -922,10 +438,11 @@ ShallowWrapper {
                 }
               >
                 Carrots
-              </Text>,
+              </Text>
               <GridNB
                 style={
                   Object {
+                    "flex": 1,
                     "marginBottom": 20,
                     "marginTop": 20,
                   }
@@ -1004,7 +521,7 @@ ShallowWrapper {
                     virtual={undefined}
                   />
                 </ColumnNB>
-              </GridNB>,
+              </GridNB>
               <Text
                 accessible={true}
                 allowFontScaling={true}
@@ -1020,63 +537,88 @@ ShallowWrapper {
                 }
               >
                 Some vegetables
-              </Text>,
-            ],
-            "style": Object {
-              "marginLeft": 20,
-              "marginRight": 20,
-              "paddingTop": 10,
+              </Text>
+            </Styled(Container)>,
+            <ProductActionBar
+              product={
+                Object {
+                  "productCategory": "Vegetable",
+                  "productDescription": "Some vegetables",
+                  "productOwner": "Marlon John Ynion",
+                  "productPrice": 5,
+                  "productRating": 5,
+                  "productTitle": "Carrots",
+                  "uri": "https://firebasestorage.googleapis.com/v0/b/marketsense-b09f8.appspot.com/o/products%2Fp0.png?alt=media&token=c305d51d-1b8b-4fbb-bd10-0c03a5c5805d",
+                }
+              }
+            />,
+          ],
+          "virtual": undefined,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "source": Object {
+                "uri": undefined,
+              },
+              "style": Object {
+                "height": 250,
+                "width": null,
+              },
             },
-            "virtual": undefined,
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
           },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "accessible": true,
-                "allowFontScaling": true,
-                "children": "Vegetable",
-                "ellipsizeMode": "tail",
-                "style": Object {
-                  "color": "#424242",
-                  "fontSize": 16,
-                  "fontWeight": "bold",
-                  "marginTop": 5,
-                },
-              },
-              "ref": null,
-              "rendered": "Vegetable",
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "accessible": true,
-                "allowFontScaling": true,
-                "children": "Carrots",
-                "ellipsizeMode": "tail",
-                "style": Object {
-                  "color": "#424242",
-                  "fontSize": 30,
-                  "fontWeight": "bold",
-                  "marginTop": 0,
-                },
-              },
-              "ref": null,
-              "rendered": "Carrots",
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "color": "#424242",
+                      "fontSize": 16,
+                      "fontWeight": "bold",
+                      "marginTop": 5,
+                    }
+                  }
+                >
+                  Vegetable
+                </Text>,
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "color": "#424242",
+                      "fontSize": 30,
+                      "fontWeight": "bold",
+                      "marginTop": 0,
+                    }
+                  }
+                >
+                  Carrots
+                </Text>,
+                <GridNB
+                  style={
+                    Object {
+                      "flex": 1,
+                      "marginBottom": 20,
+                      "marginTop": 20,
+                    }
+                  }
+                >
                   <ColumnNB
                     style={
                       Object {
@@ -1095,7 +637,7 @@ ShallowWrapper {
                       }
                       virtual={undefined}
                     />
-                  </ColumnNB>,
+                  </ColumnNB>
                   <ColumnNB
                     style={
                       Object {
@@ -1131,7 +673,7 @@ ShallowWrapper {
                         }
                       }
                     />
-                  </ColumnNB>,
+                  </ColumnNB>
                   <ColumnNB
                     style={
                       Object {
@@ -1149,59 +691,109 @@ ShallowWrapper {
                       }
                       virtual={undefined}
                     />
-                  </ColumnNB>,
-                ],
-                "style": Object {
-                  "marginBottom": 20,
-                  "marginTop": 20,
-                },
+                  </ColumnNB>
+                </GridNB>,
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  numberOfLines={7}
+                  style={
+                    Object {
+                      "fontSize": 18,
+                      "fontWeight": "200",
+                      "lineHeight": 25,
+                      "marginTop": 7,
+                    }
+                  }
+                >
+                  Some vegetables
+                </Text>,
+              ],
+              "style": Object {
+                "marginLeft": 20,
+                "marginRight": 20,
+                "paddingTop": 10,
               },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "children": <Styled(Icon)
-                      name="person"
+              "virtual": undefined,
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "accessible": true,
+                  "allowFontScaling": true,
+                  "children": "Vegetable",
+                  "ellipsizeMode": "tail",
+                  "style": Object {
+                    "color": "#424242",
+                    "fontSize": 16,
+                    "fontWeight": "bold",
+                    "marginTop": 5,
+                  },
+                },
+                "ref": null,
+                "rendered": "Vegetable",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "accessible": true,
+                  "allowFontScaling": true,
+                  "children": "Carrots",
+                  "ellipsizeMode": "tail",
+                  "style": Object {
+                    "color": "#424242",
+                    "fontSize": 30,
+                    "fontWeight": "bold",
+                    "marginTop": 0,
+                  },
+                },
+                "ref": null,
+                "rendered": "Carrots",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <ColumnNB
                       style={
                         Object {
-                          "fontSize": 40,
+                          "flex": 0.1,
+                          "height": 100,
+                          "paddingTop": 19,
                         }
                       }
-                      virtual={undefined}
-                    />,
-                    "style": Object {
-                      "flex": 0.1,
-                      "height": 100,
-                      "paddingTop": 19,
-                    },
-                  },
-                  "ref": null,
-                  "rendered": Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "name": "person",
-                      "style": Object {
-                        "fontSize": 40,
-                      },
-                      "virtual": undefined,
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "children": Array [
+                    >
+                      <Styled(Icon)
+                        name="person"
+                        style={
+                          Object {
+                            "fontSize": 40,
+                          }
+                        }
+                        virtual={undefined}
+                      />
+                    </ColumnNB>,
+                    <ColumnNB
+                      style={
+                        Object {
+                          "flex": 0.8,
+                          "height": 100,
+                          "marginLeft": 10,
+                          "paddingTop": 20,
+                        }
+                      }
+                    >
                       <Text
                         accessible={true}
                         allowFontScaling={true}
@@ -1214,7 +806,7 @@ ShallowWrapper {
                         }
                       >
                         Marlon John Ynion
-                      </Text>,
+                      </Text>
                       <Text
                         accessible={true}
                         allowFontScaling={true}
@@ -1226,13 +818,1064 @@ ShallowWrapper {
                             "marginTop": 3,
                           }
                         }
+                      />
+                    </ColumnNB>,
+                    <ColumnNB
+                      style={
+                        Object {
+                          "flex": 0.3,
+                          "height": 100,
+                        }
+                      }
+                    >
+                      <Styled(Thumbnail)
+                        large={true}
+                        source={
+                          Object {
+                            "uri": undefined,
+                          }
+                        }
+                        virtual={undefined}
+                      />
+                    </ColumnNB>,
+                  ],
+                  "style": Object {
+                    "flex": 1,
+                    "marginBottom": 20,
+                    "marginTop": 20,
+                  },
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": <Styled(Icon)
+                        name="person"
+                        style={
+                          Object {
+                            "fontSize": 40,
+                          }
+                        }
+                        virtual={undefined}
                       />,
+                      "style": Object {
+                        "flex": 0.1,
+                        "height": 100,
+                        "paddingTop": 19,
+                      },
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "name": "person",
+                        "style": Object {
+                          "fontSize": 40,
+                        },
+                        "virtual": undefined,
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": Array [
+                        <Text
+                          accessible={true}
+                          allowFontScaling={true}
+                          ellipsizeMode="tail"
+                          style={
+                            Object {
+                              "fontSize": 16,
+                              "fontWeight": "300",
+                            }
+                          }
+                        >
+                          Marlon John Ynion
+                        </Text>,
+                        <Text
+                          accessible={true}
+                          allowFontScaling={true}
+                          ellipsizeMode="tail"
+                          style={
+                            Object {
+                              "fontSize": 15,
+                              "fontWeight": "300",
+                              "marginTop": 3,
+                            }
+                          }
+                        />,
+                      ],
+                      "style": Object {
+                        "flex": 0.8,
+                        "height": 100,
+                        "marginLeft": 10,
+                        "paddingTop": 20,
+                      },
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "accessible": true,
+                          "allowFontScaling": true,
+                          "children": "Marlon John Ynion",
+                          "ellipsizeMode": "tail",
+                          "style": Object {
+                            "fontSize": 16,
+                            "fontWeight": "300",
+                          },
+                        },
+                        "ref": null,
+                        "rendered": "Marlon John Ynion",
+                        "type": [Function],
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "accessible": true,
+                          "allowFontScaling": true,
+                          "children": undefined,
+                          "ellipsizeMode": "tail",
+                          "style": Object {
+                            "fontSize": 15,
+                            "fontWeight": "300",
+                            "marginTop": 3,
+                          },
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
                     ],
-                    "style": Object {
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": <Styled(Thumbnail)
+                        large={true}
+                        source={
+                          Object {
+                            "uri": undefined,
+                          }
+                        }
+                        virtual={undefined}
+                      />,
+                      "style": Object {
+                        "flex": 0.3,
+                        "height": 100,
+                      },
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "large": true,
+                        "source": Object {
+                          "uri": undefined,
+                        },
+                        "virtual": undefined,
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "accessible": true,
+                  "allowFontScaling": true,
+                  "children": "Some vegetables",
+                  "ellipsizeMode": "tail",
+                  "numberOfLines": 7,
+                  "style": Object {
+                    "fontSize": 18,
+                    "fontWeight": "200",
+                    "lineHeight": 25,
+                    "marginTop": 7,
+                  },
+                },
+                "ref": null,
+                "rendered": "Some vegetables",
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "product": Object {
+                "productCategory": "Vegetable",
+                "productDescription": "Some vegetables",
+                "productOwner": "Marlon John Ynion",
+                "productPrice": 5,
+                "productRating": 5,
+                "productTitle": "Carrots",
+                "uri": "https://firebasestorage.googleapis.com/v0/b/marketsense-b09f8.appspot.com/o/products%2Fp0.png?alt=media&token=c305d51d-1b8b-4fbb-bd10-0c03a5c5805d",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+    "type": [MockFunction],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <withOrientation>
+          <Styled(Container)
+            virtual={undefined}
+          >
+            <Image
+              source={
+                Object {
+                  "uri": undefined,
+                }
+              }
+              style={
+                Object {
+                  "height": 250,
+                  "width": null,
+                }
+              }
+            />
+            <Styled(Container)
+              style={
+                Object {
+                  "marginLeft": 20,
+                  "marginRight": 20,
+                  "paddingTop": 10,
+                }
+              }
+              virtual={undefined}
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#424242",
+                    "fontSize": 16,
+                    "fontWeight": "bold",
+                    "marginTop": 5,
+                  }
+                }
+              >
+                Vegetable
+              </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#424242",
+                    "fontSize": 30,
+                    "fontWeight": "bold",
+                    "marginTop": 0,
+                  }
+                }
+              >
+                Carrots
+              </Text>
+              <GridNB
+                style={
+                  Object {
+                    "flex": 1,
+                    "marginBottom": 20,
+                    "marginTop": 20,
+                  }
+                }
+              >
+                <ColumnNB
+                  style={
+                    Object {
+                      "flex": 0.1,
+                      "height": 100,
+                      "paddingTop": 19,
+                    }
+                  }
+                >
+                  <Styled(Icon)
+                    name="person"
+                    style={
+                      Object {
+                        "fontSize": 40,
+                      }
+                    }
+                    virtual={undefined}
+                  />
+                </ColumnNB>
+                <ColumnNB
+                  style={
+                    Object {
                       "flex": 0.8,
                       "height": 100,
                       "marginLeft": 10,
                       "paddingTop": 20,
+                    }
+                  }
+                >
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "300",
+                      }
+                    }
+                  >
+                    Marlon John Ynion
+                  </Text>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "fontSize": 15,
+                        "fontWeight": "300",
+                        "marginTop": 3,
+                      }
+                    }
+                  />
+                </ColumnNB>
+                <ColumnNB
+                  style={
+                    Object {
+                      "flex": 0.3,
+                      "height": 100,
+                    }
+                  }
+                >
+                  <Styled(Thumbnail)
+                    large={true}
+                    source={
+                      Object {
+                        "uri": undefined,
+                      }
+                    }
+                    virtual={undefined}
+                  />
+                </ColumnNB>
+              </GridNB>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                numberOfLines={7}
+                style={
+                  Object {
+                    "fontSize": 18,
+                    "fontWeight": "200",
+                    "lineHeight": 25,
+                    "marginTop": 7,
+                  }
+                }
+              >
+                Some vegetables
+              </Text>
+            </Styled(Container)>
+            <ProductActionBar
+              product={
+                Object {
+                  "productCategory": "Vegetable",
+                  "productDescription": "Some vegetables",
+                  "productOwner": "Marlon John Ynion",
+                  "productPrice": 5,
+                  "productRating": 5,
+                  "productTitle": "Carrots",
+                  "uri": "https://firebasestorage.googleapis.com/v0/b/marketsense-b09f8.appspot.com/o/products%2Fp0.png?alt=media&token=c305d51d-1b8b-4fbb-bd10-0c03a5c5805d",
+                }
+              }
+            />
+          </Styled(Container)>
+        </withOrientation>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <Styled(Container)
+            virtual={undefined}
+          >
+            <Image
+              source={
+                Object {
+                  "uri": undefined,
+                }
+              }
+              style={
+                Object {
+                  "height": 250,
+                  "width": null,
+                }
+              }
+            />
+            <Styled(Container)
+              style={
+                Object {
+                  "marginLeft": 20,
+                  "marginRight": 20,
+                  "paddingTop": 10,
+                }
+              }
+              virtual={undefined}
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#424242",
+                    "fontSize": 16,
+                    "fontWeight": "bold",
+                    "marginTop": 5,
+                  }
+                }
+              >
+                Vegetable
+              </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#424242",
+                    "fontSize": 30,
+                    "fontWeight": "bold",
+                    "marginTop": 0,
+                  }
+                }
+              >
+                Carrots
+              </Text>
+              <GridNB
+                style={
+                  Object {
+                    "flex": 1,
+                    "marginBottom": 20,
+                    "marginTop": 20,
+                  }
+                }
+              >
+                <ColumnNB
+                  style={
+                    Object {
+                      "flex": 0.1,
+                      "height": 100,
+                      "paddingTop": 19,
+                    }
+                  }
+                >
+                  <Styled(Icon)
+                    name="person"
+                    style={
+                      Object {
+                        "fontSize": 40,
+                      }
+                    }
+                    virtual={undefined}
+                  />
+                </ColumnNB>
+                <ColumnNB
+                  style={
+                    Object {
+                      "flex": 0.8,
+                      "height": 100,
+                      "marginLeft": 10,
+                      "paddingTop": 20,
+                    }
+                  }
+                >
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "300",
+                      }
+                    }
+                  >
+                    Marlon John Ynion
+                  </Text>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "fontSize": 15,
+                        "fontWeight": "300",
+                        "marginTop": 3,
+                      }
+                    }
+                  />
+                </ColumnNB>
+                <ColumnNB
+                  style={
+                    Object {
+                      "flex": 0.3,
+                      "height": 100,
+                    }
+                  }
+                >
+                  <Styled(Thumbnail)
+                    large={true}
+                    source={
+                      Object {
+                        "uri": undefined,
+                      }
+                    }
+                    virtual={undefined}
+                  />
+                </ColumnNB>
+              </GridNB>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                numberOfLines={7}
+                style={
+                  Object {
+                    "fontSize": 18,
+                    "fontWeight": "200",
+                    "lineHeight": 25,
+                    "marginTop": 7,
+                  }
+                }
+              >
+                Some vegetables
+              </Text>
+            </Styled(Container)>
+            <ProductActionBar
+              product={
+                Object {
+                  "productCategory": "Vegetable",
+                  "productDescription": "Some vegetables",
+                  "productOwner": "Marlon John Ynion",
+                  "productPrice": 5,
+                  "productRating": 5,
+                  "productTitle": "Carrots",
+                  "uri": "https://firebasestorage.googleapis.com/v0/b/marketsense-b09f8.appspot.com/o/products%2Fp0.png?alt=media&token=c305d51d-1b8b-4fbb-bd10-0c03a5c5805d",
+                }
+              }
+            />
+          </Styled(Container)>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <Image
+                source={
+                  Object {
+                    "uri": undefined,
+                  }
+                }
+                style={
+                  Object {
+                    "height": 250,
+                    "width": null,
+                  }
+                }
+              />,
+              <Styled(Container)
+                style={
+                  Object {
+                    "marginLeft": 20,
+                    "marginRight": 20,
+                    "paddingTop": 10,
+                  }
+                }
+                virtual={undefined}
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "color": "#424242",
+                      "fontSize": 16,
+                      "fontWeight": "bold",
+                      "marginTop": 5,
+                    }
+                  }
+                >
+                  Vegetable
+                </Text>
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "color": "#424242",
+                      "fontSize": 30,
+                      "fontWeight": "bold",
+                      "marginTop": 0,
+                    }
+                  }
+                >
+                  Carrots
+                </Text>
+                <GridNB
+                  style={
+                    Object {
+                      "flex": 1,
+                      "marginBottom": 20,
+                      "marginTop": 20,
+                    }
+                  }
+                >
+                  <ColumnNB
+                    style={
+                      Object {
+                        "flex": 0.1,
+                        "height": 100,
+                        "paddingTop": 19,
+                      }
+                    }
+                  >
+                    <Styled(Icon)
+                      name="person"
+                      style={
+                        Object {
+                          "fontSize": 40,
+                        }
+                      }
+                      virtual={undefined}
+                    />
+                  </ColumnNB>
+                  <ColumnNB
+                    style={
+                      Object {
+                        "flex": 0.8,
+                        "height": 100,
+                        "marginLeft": 10,
+                        "paddingTop": 20,
+                      }
+                    }
+                  >
+                    <Text
+                      accessible={true}
+                      allowFontScaling={true}
+                      ellipsizeMode="tail"
+                      style={
+                        Object {
+                          "fontSize": 16,
+                          "fontWeight": "300",
+                        }
+                      }
+                    >
+                      Marlon John Ynion
+                    </Text>
+                    <Text
+                      accessible={true}
+                      allowFontScaling={true}
+                      ellipsizeMode="tail"
+                      style={
+                        Object {
+                          "fontSize": 15,
+                          "fontWeight": "300",
+                          "marginTop": 3,
+                        }
+                      }
+                    />
+                  </ColumnNB>
+                  <ColumnNB
+                    style={
+                      Object {
+                        "flex": 0.3,
+                        "height": 100,
+                      }
+                    }
+                  >
+                    <Styled(Thumbnail)
+                      large={true}
+                      source={
+                        Object {
+                          "uri": undefined,
+                        }
+                      }
+                      virtual={undefined}
+                    />
+                  </ColumnNB>
+                </GridNB>
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  numberOfLines={7}
+                  style={
+                    Object {
+                      "fontSize": 18,
+                      "fontWeight": "200",
+                      "lineHeight": 25,
+                      "marginTop": 7,
+                    }
+                  }
+                >
+                  Some vegetables
+                </Text>
+              </Styled(Container)>,
+              <ProductActionBar
+                product={
+                  Object {
+                    "productCategory": "Vegetable",
+                    "productDescription": "Some vegetables",
+                    "productOwner": "Marlon John Ynion",
+                    "productPrice": 5,
+                    "productRating": 5,
+                    "productTitle": "Carrots",
+                    "uri": "https://firebasestorage.googleapis.com/v0/b/marketsense-b09f8.appspot.com/o/products%2Fp0.png?alt=media&token=c305d51d-1b8b-4fbb-bd10-0c03a5c5805d",
+                  }
+                }
+              />,
+            ],
+            "virtual": undefined,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "source": Object {
+                  "uri": undefined,
+                },
+                "style": Object {
+                  "height": 250,
+                  "width": null,
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "color": "#424242",
+                        "fontSize": 16,
+                        "fontWeight": "bold",
+                        "marginTop": 5,
+                      }
+                    }
+                  >
+                    Vegetable
+                  </Text>,
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "color": "#424242",
+                        "fontSize": 30,
+                        "fontWeight": "bold",
+                        "marginTop": 0,
+                      }
+                    }
+                  >
+                    Carrots
+                  </Text>,
+                  <GridNB
+                    style={
+                      Object {
+                        "flex": 1,
+                        "marginBottom": 20,
+                        "marginTop": 20,
+                      }
+                    }
+                  >
+                    <ColumnNB
+                      style={
+                        Object {
+                          "flex": 0.1,
+                          "height": 100,
+                          "paddingTop": 19,
+                        }
+                      }
+                    >
+                      <Styled(Icon)
+                        name="person"
+                        style={
+                          Object {
+                            "fontSize": 40,
+                          }
+                        }
+                        virtual={undefined}
+                      />
+                    </ColumnNB>
+                    <ColumnNB
+                      style={
+                        Object {
+                          "flex": 0.8,
+                          "height": 100,
+                          "marginLeft": 10,
+                          "paddingTop": 20,
+                        }
+                      }
+                    >
+                      <Text
+                        accessible={true}
+                        allowFontScaling={true}
+                        ellipsizeMode="tail"
+                        style={
+                          Object {
+                            "fontSize": 16,
+                            "fontWeight": "300",
+                          }
+                        }
+                      >
+                        Marlon John Ynion
+                      </Text>
+                      <Text
+                        accessible={true}
+                        allowFontScaling={true}
+                        ellipsizeMode="tail"
+                        style={
+                          Object {
+                            "fontSize": 15,
+                            "fontWeight": "300",
+                            "marginTop": 3,
+                          }
+                        }
+                      />
+                    </ColumnNB>
+                    <ColumnNB
+                      style={
+                        Object {
+                          "flex": 0.3,
+                          "height": 100,
+                        }
+                      }
+                    >
+                      <Styled(Thumbnail)
+                        large={true}
+                        source={
+                          Object {
+                            "uri": undefined,
+                          }
+                        }
+                        virtual={undefined}
+                      />
+                    </ColumnNB>
+                  </GridNB>,
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    numberOfLines={7}
+                    style={
+                      Object {
+                        "fontSize": 18,
+                        "fontWeight": "200",
+                        "lineHeight": 25,
+                        "marginTop": 7,
+                      }
+                    }
+                  >
+                    Some vegetables
+                  </Text>,
+                ],
+                "style": Object {
+                  "marginLeft": 20,
+                  "marginRight": 20,
+                  "paddingTop": 10,
+                },
+                "virtual": undefined,
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "accessible": true,
+                    "allowFontScaling": true,
+                    "children": "Vegetable",
+                    "ellipsizeMode": "tail",
+                    "style": Object {
+                      "color": "#424242",
+                      "fontSize": 16,
+                      "fontWeight": "bold",
+                      "marginTop": 5,
+                    },
+                  },
+                  "ref": null,
+                  "rendered": "Vegetable",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "accessible": true,
+                    "allowFontScaling": true,
+                    "children": "Carrots",
+                    "ellipsizeMode": "tail",
+                    "style": Object {
+                      "color": "#424242",
+                      "fontSize": 30,
+                      "fontWeight": "bold",
+                      "marginTop": 0,
+                    },
+                  },
+                  "ref": null,
+                  "rendered": "Carrots",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <ColumnNB
+                        style={
+                          Object {
+                            "flex": 0.1,
+                            "height": 100,
+                            "paddingTop": 19,
+                          }
+                        }
+                      >
+                        <Styled(Icon)
+                          name="person"
+                          style={
+                            Object {
+                              "fontSize": 40,
+                            }
+                          }
+                          virtual={undefined}
+                        />
+                      </ColumnNB>,
+                      <ColumnNB
+                        style={
+                          Object {
+                            "flex": 0.8,
+                            "height": 100,
+                            "marginLeft": 10,
+                            "paddingTop": 20,
+                          }
+                        }
+                      >
+                        <Text
+                          accessible={true}
+                          allowFontScaling={true}
+                          ellipsizeMode="tail"
+                          style={
+                            Object {
+                              "fontSize": 16,
+                              "fontWeight": "300",
+                            }
+                          }
+                        >
+                          Marlon John Ynion
+                        </Text>
+                        <Text
+                          accessible={true}
+                          allowFontScaling={true}
+                          ellipsizeMode="tail"
+                          style={
+                            Object {
+                              "fontSize": 15,
+                              "fontWeight": "300",
+                              "marginTop": 3,
+                            }
+                          }
+                        />
+                      </ColumnNB>,
+                      <ColumnNB
+                        style={
+                          Object {
+                            "flex": 0.3,
+                            "height": 100,
+                          }
+                        }
+                      >
+                        <Styled(Thumbnail)
+                          large={true}
+                          source={
+                            Object {
+                              "uri": undefined,
+                            }
+                          }
+                          virtual={undefined}
+                        />
+                      </ColumnNB>,
+                    ],
+                    "style": Object {
+                      "flex": 1,
+                      "marginBottom": 20,
+                      "marginTop": 20,
                     },
                   },
                   "ref": null,
@@ -1242,17 +1885,37 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "class",
                       "props": Object {
-                        "accessible": true,
-                        "allowFontScaling": true,
-                        "children": "Marlon John Ynion",
-                        "ellipsizeMode": "tail",
+                        "children": <Styled(Icon)
+                          name="person"
+                          style={
+                            Object {
+                              "fontSize": 40,
+                            }
+                          }
+                          virtual={undefined}
+                        />,
                         "style": Object {
-                          "fontSize": 16,
-                          "fontWeight": "300",
+                          "flex": 0.1,
+                          "height": 100,
+                          "paddingTop": 19,
                         },
                       },
                       "ref": null,
-                      "rendered": "Marlon John Ynion",
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "name": "person",
+                          "style": Object {
+                            "fontSize": 40,
+                          },
+                          "virtual": undefined,
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
                       "type": [Function],
                     },
                     Object {
@@ -1260,18 +1923,117 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "class",
                       "props": Object {
-                        "accessible": true,
-                        "allowFontScaling": true,
-                        "children": undefined,
-                        "ellipsizeMode": "tail",
+                        "children": Array [
+                          <Text
+                            accessible={true}
+                            allowFontScaling={true}
+                            ellipsizeMode="tail"
+                            style={
+                              Object {
+                                "fontSize": 16,
+                                "fontWeight": "300",
+                              }
+                            }
+                          >
+                            Marlon John Ynion
+                          </Text>,
+                          <Text
+                            accessible={true}
+                            allowFontScaling={true}
+                            ellipsizeMode="tail"
+                            style={
+                              Object {
+                                "fontSize": 15,
+                                "fontWeight": "300",
+                                "marginTop": 3,
+                              }
+                            }
+                          />,
+                        ],
                         "style": Object {
-                          "fontSize": 15,
-                          "fontWeight": "300",
-                          "marginTop": 3,
+                          "flex": 0.8,
+                          "height": 100,
+                          "marginLeft": 10,
+                          "paddingTop": 20,
                         },
                       },
                       "ref": null,
-                      "rendered": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "class",
+                          "props": Object {
+                            "accessible": true,
+                            "allowFontScaling": true,
+                            "children": "Marlon John Ynion",
+                            "ellipsizeMode": "tail",
+                            "style": Object {
+                              "fontSize": 16,
+                              "fontWeight": "300",
+                            },
+                          },
+                          "ref": null,
+                          "rendered": "Marlon John Ynion",
+                          "type": [Function],
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "class",
+                          "props": Object {
+                            "accessible": true,
+                            "allowFontScaling": true,
+                            "children": undefined,
+                            "ellipsizeMode": "tail",
+                            "style": Object {
+                              "fontSize": 15,
+                              "fontWeight": "300",
+                              "marginTop": 3,
+                            },
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": [Function],
+                        },
+                      ],
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": <Styled(Thumbnail)
+                          large={true}
+                          source={
+                            Object {
+                              "uri": undefined,
+                            }
+                          }
+                          virtual={undefined}
+                        />,
+                        "style": Object {
+                          "flex": 0.3,
+                          "height": 100,
+                        },
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "large": true,
+                          "source": Object {
+                            "uri": undefined,
+                          },
+                          "virtual": undefined,
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
                       "type": [Function],
                     },
                   ],
@@ -1282,36 +2044,20 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": <Styled(Thumbnail)
-                      large={true}
-                      source={
-                        Object {
-                          "uri": undefined,
-                        }
-                      }
-                      virtual={undefined}
-                    />,
+                    "accessible": true,
+                    "allowFontScaling": true,
+                    "children": "Some vegetables",
+                    "ellipsizeMode": "tail",
+                    "numberOfLines": 7,
                     "style": Object {
-                      "flex": 0.3,
-                      "height": 100,
+                      "fontSize": 18,
+                      "fontWeight": "200",
+                      "lineHeight": 25,
+                      "marginTop": 7,
                     },
                   },
                   "ref": null,
-                  "rendered": Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "large": true,
-                      "source": Object {
-                        "uri": undefined,
-                      },
-                      "virtual": undefined,
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
+                  "rendered": "Some vegetables",
                   "type": [Function],
                 },
               ],
@@ -1320,48 +2066,28 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
-                "accessible": true,
-                "allowFontScaling": true,
-                "children": "Some vegetables",
-                "ellipsizeMode": "tail",
-                "numberOfLines": 7,
-                "style": Object {
-                  "fontSize": 18,
-                  "fontWeight": "200",
-                  "lineHeight": 25,
-                  "marginTop": 7,
+                "product": Object {
+                  "productCategory": "Vegetable",
+                  "productDescription": "Some vegetables",
+                  "productOwner": "Marlon John Ynion",
+                  "productPrice": 5,
+                  "productRating": 5,
+                  "productTitle": "Carrots",
+                  "uri": "https://firebasestorage.googleapis.com/v0/b/marketsense-b09f8.appspot.com/o/products%2Fp0.png?alt=media&token=c305d51d-1b8b-4fbb-bd10-0c03a5c5805d",
                 },
               },
               "ref": null,
-              "rendered": "Some vegetables",
+              "rendered": null,
               "type": [Function],
             },
           ],
           "type": [Function],
         },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "product": Object {
-              "productCategory": "Vegetable",
-              "productDescription": "Some vegetables",
-              "productOwner": "Marlon John Ynion",
-              "productPrice": 5,
-              "productRating": 5,
-              "productTitle": "Carrots",
-              "uri": "https://firebasestorage.googleapis.com/v0/b/marketsense-b09f8.appspot.com/o/products%2Fp0.png?alt=media&token=c305d51d-1b8b-4fbb-bd10-0c03a5c5805d",
-            },
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-      ],
-      "type": [Function],
+        "type": [Function],
+      },
+      "type": [MockFunction],
     },
   ],
   Symbol(enzyme.__options__): Object {
