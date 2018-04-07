@@ -1,7 +1,7 @@
 import React from 'react'
 import configureStore from 'redux-mock-store'
 import { shallow } from 'enzyme'
-import ConnectedProductsListView, { ProductListView, ProductsList } from '../../src/containers/ProductListView'
+import ConnectedProductsListView from '../../src/containers/ProductListView'
 
 describe('<ProductsListView />', () => {
   const initialState = {

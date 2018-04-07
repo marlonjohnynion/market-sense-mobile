@@ -1,8 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import LoginForm, { emailField } from '../../src/components/LoginForm'
+import LoginForm from '../../src/components/LoginForm'
 import { authenticateUser } from '../../src/actions/userActions'
-import { Form, Item } from 'native-base'
 
 describe('<LoginForm />', () => {
   let wrapper

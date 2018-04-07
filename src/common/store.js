@@ -3,6 +3,8 @@ import { createReactNavigationReduxMiddleware } from 'react-navigation-redux-hel
 import thunk from 'redux-thunk'
 import reducers from './../reducers'
 
+import { composeWithDevTools } from 'remote-redux-devtools'
+
 export const navMiddleware = createReactNavigationReduxMiddleware(
   'root',
   state => state.nav
@@ -10,5 +12,5 @@ export const navMiddleware = createReactNavigationReduxMiddleware(
 
 export default createStore(
   reducers,
-  applyMiddleware(thunk, navMiddleware)
+  composeWithDevTools(applyMiddleware(thunk, navMiddleware))
 )

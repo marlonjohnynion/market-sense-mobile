@@ -1,4 +1,5 @@
 import * as actions from './types/userActionTypes'
+import { loadProducts } from './productActions'
 import firebase from '../common/firebase'
 
 export const loginSuccess = (values) => ({
@@ -40,7 +41,7 @@ export const authenticateUser = (values) => {
         .auth()
         .signInAndRetrieveDataWithEmailAndPassword(email, password)
       if (firebase.auth().currentUser) {
-        console.log(firebase.auth().currentUser)
+        dispatch(loadProducts())
         dispatch(loginSuccess(values))
       }
     } catch (e) {

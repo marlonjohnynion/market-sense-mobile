@@ -8,7 +8,7 @@ const ProductActionBar = ({product}) => {
       <Grid>
         <Col style={styles.left}>
           <ProductPrice price={product.productPrice} />
-          <ProductRating rating={product.productRating} />
+          <Text>Free Delivery</Text>
         </Col>
         <Col style={styles.right}>
           <ActionButton text={'CHECK AVAILABILITY'}/>
@@ -46,14 +46,14 @@ const styles = StyleSheet.create({
   productPrice: {fontSize: 16, paddingTop: 6, fontWeight: '800'},
   productRating: {fontSize: 16, fontWeight: '800', color: 'green'},
   productBottomBar: {
-    bottom: 0,
     height: 75,
     paddingTop: 15,
     paddingRight: 20,
     paddingLeft: 20,
     backgroundColor: '#fff',
     borderColor: 'black',
-    borderTopWidth: 0.3
+    borderTopWidth: 0.3,
+    marginTop: 20
   },
   right: {flex: 0.6},
   left: {flex: 0.6}

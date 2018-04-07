@@ -1,7 +1,6 @@
 import React from 'react'
 import {
   Container,
-  Header,
   Content
 } from 'native-base'
 import { bindActionCreators } from 'redux'
@@ -12,7 +11,6 @@ import LoginForm from '../components/LoginForm'
 export const Login = ({state, userActions}) => {
   return (
     <Container>
-      <Header/>
       <Content>
         <LoginForm loginHandler={userActions.authenticateUser}/>
       </Content>

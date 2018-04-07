@@ -1,7 +1,7 @@
 const product = (state = {}, action) => {
   switch (action.type) {
     case 'SHOW_PRODUCTS':
-      return { ...state, products: action.products }
+      return { ...state, productsList: action.products }
     case 'SELECT_PRODUCT':
       return { ...state, selectedProduct: action.selectedProduct }
     case 'ADD_PRODUCT':

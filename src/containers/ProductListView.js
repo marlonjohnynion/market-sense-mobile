@@ -1,17 +1,22 @@
 import React from 'react'
+import { ActivityIndicator, ScrollView } from 'react-native'
+import { bindActionCreators } from 'redux'
 import ProductListItem from '../components/ProductListItem'
 import {
   Container, Header, Button, Icon,
   Item, Input, Text
 } from 'native-base'
-import { ScrollView } from 'react-native'
 import { connect } from 'react-redux'
+import { selectProduct } from '../actions/productActions'
 
-export const ProductsList = ({products}) => {
-  return products.map((product) => <ProductListItem key={product.productTitle} product={product}/>)
+export const ProductsList = ({products, selectProduct}) => {
+  if (products) {
+    return products.map((product) => <ProductListItem key={product.productTitle} product={product} selectProduct={selectProduct}/>)
+  }
+  return <ActivityIndicator />
 }
 
-export const ProductListView = ({products}) => {
+export const ProductListView = ({products, selectProduct}) => {
   return (
     <Container>
       <Header searchBar rounded>
@@ -24,16 +29,18 @@ export const ProductListView = ({products}) => {
         </Button>
       </Header>
       <ScrollView>
-        <ProductsList products={products}/>
+        <ProductsList products={products} selectProduct={selectProduct}/>
       </ScrollView>
     </Container>
   )
 }
 
-const mapStateToProps = (state) => {
-  return ({
-    products: state.products
-  })
-}
+const mapStateToProps = (state) => ({
+  products: state.products.productsList
+})
 
-export default connect(mapStateToProps)(ProductListView)
+const mapDispatchToProps = (dispatch) => (
+  bindActionCreators({ selectProduct }, dispatch)
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductListView)

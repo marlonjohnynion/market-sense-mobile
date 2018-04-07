@@ -2,13 +2,23 @@ import React from 'react'
 import { addNavigationHelpers, StackNavigator } from 'react-navigation'
 import { createReduxBoundAddListener } from 'react-navigation-redux-helpers'
 import { connect } from 'react-redux'
-
 import Login from '../containers/Login'
+import ProductsList from '../containers/ProductListView'
+import ProductContainer from '../containers/ProductContainer'
 
 export const AppNavigator = StackNavigator({
   Login: {
-    screen: Login,
-    title: 'Login'
+    screen: Login
+  },
+  ProductsList: {
+    screen: ProductsList,
+    navigationOptions: {
+      title: 'Products List',
+      header: null
+    }
+  },
+  Product: {
+    screen: ProductContainer
   }
 }, {
   initialRouteName: 'Login'

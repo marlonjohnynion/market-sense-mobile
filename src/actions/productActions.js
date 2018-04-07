@@ -2,8 +2,9 @@ import firebase from '../common/firebase'
 
 export const loadProducts = () => {
   return async (dispatch) => {
-    const products = await firebase.database().ref('/products').once('value')
-    dispatch({type: 'SHOW_PRODUCTS', products: products})
+    const query = await firebase.database().ref('/products').once('value')
+    const products = await query.val()
+    dispatch(viewProducts(products))
   }
 }
 
@@ -23,4 +24,9 @@ export const addProduct = () => {
 export const viewProducts = (products) => ({
   type: 'SHOW_PRODUCTS',
   products: products
+})
+
+export const selectProduct = (product) => ({
+  type: 'SELECT_PRODUCT',
+  selectedProduct: product
 })
