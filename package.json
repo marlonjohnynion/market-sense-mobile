@@ -22,7 +22,8 @@
     "react-native-scripts": "1.11.1",
     "react-test-renderer": "16.2.0",
     "redux-logger": "^3.0.6",
-    "redux-mock-store": "^1.5.1"
+    "redux-mock-store": "^1.5.1",
+    "remote-redux-devtools": "^0.5.12"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
@@ -40,6 +41,7 @@
     "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js"
   },
   "dependencies": {
+    "@expo/vector-icons": "^6.3.1",
     "expo": "^25.0.0",
     "firebase": "^4.11.0",
     "native-base": "^2.3.10",
