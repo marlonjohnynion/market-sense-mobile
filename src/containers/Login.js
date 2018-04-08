@@ -8,22 +8,16 @@ import { connect } from 'react-redux'
 import * as userActions from '../actions/userActions'
 import LoginForm from '../components/LoginForm'
 
-export const Login = ({state, userActions}) => {
+export const Login = ({ state, userActions }) => {
   return (
     <Container>
-      <Content>
-        <LoginForm loginHandler={userActions.authenticateUser}/>
-      </Content>
+      <LoginForm loginHandler={userActions.authenticateUser}/>
     </Container>
   )
 }
-
-const mapStateToProps = (state) => ({
-  ...state
-})
 
 const mapDispatchToProps = dispatch => ({
   userActions: bindActionCreators(userActions, dispatch)
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+export default connect(null, mapDispatchToProps)(Login)
