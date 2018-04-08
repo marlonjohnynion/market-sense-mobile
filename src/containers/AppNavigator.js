@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import Login from '../containers/Login'
 import ProductsList from '../containers/ProductListView'
 import ProductContainer from '../containers/ProductContainer'
+import Order from '../containers/Order'
 
 export const AppNavigator = StackNavigator({
   Login: {
@@ -17,8 +18,14 @@ export const AppNavigator = StackNavigator({
       header: null
     }
   },
+  Order: {
+    screen: Order
+  },
   Product: {
-    screen: ProductContainer
+    screen: ProductContainer,
+    navigationOptions: {
+      title: 'Product Information'
+    }
   }
 }, {
   initialRouteName: 'Login'

@@ -2,11 +2,13 @@ import React from 'react'
 import { View } from 'react-native'
 import ProductView from '../components/ProductView'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { checkProductAvailability } from '../actions/productActions'
 
-export const ProductContainer = ({product}) => {
+export const ProductContainer = (props) => {
   return (
     <View>
-      <ProductView product={product} />
+      <ProductView product={props.product} actions={props.actions}/>
     </View>
   )
 }
@@ -15,4 +17,8 @@ const mapStateToProps = (state) => ({
   product: state.products.selectedProduct
 })
 
-export default connect(mapStateToProps)(ProductContainer)
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators({ checkProductAvailability }, dispatch)
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductContainer)

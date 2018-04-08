@@ -21,6 +21,16 @@ export const addProduct = () => {
   }
 }
 
+export const checkProductAvailability = (product) => {
+  return async (dispatch) => {
+    dispatch(viewProductAvailability())
+  }
+}
+
+export const viewProductAvailability = () => ({
+  type: 'VIEW_PRODUCT_AVAILABILITY'
+})
+
 export const viewProducts = (products) => ({
   type: 'SHOW_PRODUCTS',
   products: products

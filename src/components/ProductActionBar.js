@@ -2,23 +2,24 @@ import React from 'react'
 import { StyleSheet, View, Text } from 'react-native'
 import { Grid, Col, Button } from 'native-base'
 
-const ProductActionBar = ({product}) => {
+const ProductActionBar = ({product, actions}) => {
+  const { checkProductAvailability } = actions
   return (
     <View style={styles.productBottomBar}>
       <Grid>
         <Col style={styles.left}>
-          <ProductPrice price={product.productPrice} />
+          <ProductPrice price={product.productPrice}/>
           <Text>Free Delivery</Text>
         </Col>
         <Col style={styles.right}>
-          <ActionButton text={'CHECK AVAILABILITY'}/>
+          <ActionButton text={'CHECK AVAILABILITY'} onPressAction={checkProductAvailability}/>
         </Col>
       </Grid>
     </View>
   )
 }
 
-export const ProductPrice = ({price}) => {
+export const ProductPrice = ({ price }) => {
   return (
     <Text style={styles.productPrice}>
       {price}
@@ -26,7 +27,7 @@ export const ProductPrice = ({price}) => {
   )
 }
 
-export const ProductRating = ({rating}) => {
+export const ProductRating = ({ rating }) => {
   return (
     <Text style={styles.productRating}>
       {rating}
@@ -34,17 +35,17 @@ export const ProductRating = ({rating}) => {
   )
 }
 
-export const ActionButton = ({text}) => {
+export const ActionButton = ({ text, onPressAction }) => {
   return (
-    <Button block success>
+    <Button block success onPress={onPressAction}>
       <Text>{text}</Text>
     </Button>
   )
 }
 
 const styles = StyleSheet.create({
-  productPrice: {fontSize: 16, paddingTop: 6, fontWeight: '800'},
-  productRating: {fontSize: 16, fontWeight: '800', color: 'green'},
+  productPrice: { fontSize: 16, paddingTop: 6, fontWeight: '800' },
+  productRating: { fontSize: 16, fontWeight: '800', color: 'green' },
   productBottomBar: {
     height: 75,
     paddingTop: 15,
@@ -55,8 +56,8 @@ const styles = StyleSheet.create({
     borderTopWidth: 0.3,
     marginTop: 20
   },
-  right: {flex: 0.6},
-  left: {flex: 0.6}
+  right: { flex: 0.6 },
+  left: { flex: 0.6 }
 })
 
 export default ProductActionBar

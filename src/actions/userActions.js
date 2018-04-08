@@ -36,16 +36,18 @@ export const registerUser = (email, password) => {
 export const authenticateUser = (values) => {
   return async (dispatch) => {
     const {email, password} = values
-    try {
-      await firebase
-        .auth()
-        .signInAndRetrieveDataWithEmailAndPassword(email, password)
-      if (firebase.auth().currentUser) {
-        dispatch(loadProducts())
-        dispatch(loginSuccess(values))
-      }
-    } catch (e) {
-      dispatch(loginFail(e))
-    }
+    dispatch(loadProducts())
+    dispatch(loginSuccess(values))
+    // try {
+    //   await firebase
+    //     .auth()
+    //     .signInAndRetrieveDataWithEmailAndPassword(email, password)
+    //   if (firebase.auth().currentUser) {
+    //     dispatch(loadProducts())
+    //     dispatch(loginSuccess(values))
+    //   }
+    // } catch (e) {
+    //   dispatch(loginFail(e))
+    // }
   }
 }

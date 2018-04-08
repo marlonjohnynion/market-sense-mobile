@@ -10,7 +10,7 @@ import {
 } from 'native-base'
 import ActionBar from './ProductActionBar'
 
-const ProductView = ({ product }) => {
+const ProductView = ({ product, actions }) => {
   return (
     <ScrollView>
       <SafeAreaView>
@@ -39,7 +39,7 @@ const ProductView = ({ product }) => {
               {product.productDescription}
             </Text>
           </Container>
-          <ActionBar product={product}/>
+          <ActionBar product={product} actions={actions}/>
         </Container>
       </SafeAreaView>
     </ScrollView>
