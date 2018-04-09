@@ -4,7 +4,7 @@ import { Container } from 'native-base'
 import OrderConfirmation from '../components/OrderConfirmation'
 
 export const OrderConfirmationContainer = (props) => {
-  const order = Object.assign(props.order, props.product)
+  const { order } = props
   return (
     <Container>
       <OrderConfirmation order={order}/>
@@ -14,11 +14,8 @@ export const OrderConfirmationContainer = (props) => {
 
 const mapStateToProps = (state) => {
   const order = state.orders.currentOrder
-  const product = state.products.productsList.filter((product) => product.key !== order.productKey)[0]
-  console.log(product)
   return {
-    order: order,
-    product: product
+    order: order
   }
 }
 
