@@ -45,6 +45,7 @@
     "expo": "^25.0.0",
     "firebase": "^4.11.0",
     "native-base": "^2.3.10",
+    "rand-token": "^0.4.0",
     "react": "16.2.0",
     "react-dom": "^16.2.0",
     "react-native": "0.52.0",
