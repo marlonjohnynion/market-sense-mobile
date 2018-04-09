@@ -187,6 +187,7 @@ ShallowWrapper {
             </Text>
           </Styled(Container)>
           <ProductActionBar
+            actions={undefined}
             product={
               Object {
                 "productCategory": "Vegetable",
@@ -365,6 +366,7 @@ ShallowWrapper {
             </Text>
           </Styled(Container)>
           <ProductActionBar
+            actions={undefined}
             product={
               Object {
                 "productCategory": "Vegetable",
@@ -540,6 +542,7 @@ ShallowWrapper {
               </Text>
             </Styled(Container)>,
             <ProductActionBar
+              actions={undefined}
               product={
                 Object {
                   "productCategory": "Vegetable",
@@ -1035,6 +1038,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
+              "actions": undefined,
               "product": Object {
                 "productCategory": "Vegetable",
                 "productDescription": "Some vegetables",
@@ -1220,6 +1224,7 @@ ShallowWrapper {
               </Text>
             </Styled(Container)>
             <ProductActionBar
+              actions={undefined}
               product={
                 Object {
                   "productCategory": "Vegetable",
@@ -1398,6 +1403,7 @@ ShallowWrapper {
               </Text>
             </Styled(Container)>
             <ProductActionBar
+              actions={undefined}
               product={
                 Object {
                   "productCategory": "Vegetable",
@@ -1573,6 +1579,7 @@ ShallowWrapper {
                 </Text>
               </Styled(Container)>,
               <ProductActionBar
+                actions={undefined}
                 product={
                   Object {
                     "productCategory": "Vegetable",
@@ -2068,6 +2075,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
+                "actions": undefined,
                 "product": Object {
                   "productCategory": "Vegetable",
                   "productDescription": "Some vegetables",
