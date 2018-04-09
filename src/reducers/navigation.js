@@ -1,5 +1,6 @@
 import { NavigationActions } from 'react-navigation'
 import { AppNavigator } from '../containers/AppNavigator'
+import { getCurrentRoute } from '../common/helpers'
 
 const router = AppNavigator.router
 const loginNav = router.getActionForPathAndParams('Login')
@@ -9,15 +10,20 @@ const navReducer = (state = initialState, action) => {
   let nextState
   switch (action.type) {
     case 'LOGIN':
-      console.log('LOGIN reducer called!')
-      nextState = router.getStateForAction(NavigationActions.navigate({routeName: 'ProductsList'}), state)
+      nextState = router.getStateForAction(NavigationActions.navigate({ routeName: 'ProductsList' }), state)
       break
     case 'SELECT_PRODUCT':
-      nextState = router.getStateForAction(NavigationActions.navigate({routeName: 'Product'}), state)
+      nextState = router.getStateForAction(NavigationActions.navigate({ routeName: 'Product' }), state)
       break
     case 'VIEW_PRODUCT_AVAILABILITY':
-      console.log('VIEW_PRODUCT_AVAILABILITY reducer called!')
-      nextState = router.getStateForAction(NavigationActions.navigate({routeName: 'Order'}), state)
+      nextState = router.getStateForAction(NavigationActions.navigate({ routeName: 'Order' }), state)
+      break
+    case 'ADD_ORDER':
+      const key = getCurrentRoute(state).key
+      nextState = router.getStateForAction(NavigationActions.replace({ key: key, routeName: 'OrderData' }), state)
+      break
+    case 'VIEW_ORDER':
+      nextState = router.getStateForAction(NavigationActions.navigate({ routeName: 'OrderData' }), state)
       break
     default:
       nextState = router.getStateForAction(action, state)
