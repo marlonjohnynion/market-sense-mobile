@@ -1,7 +1,7 @@
-const product = (state = {}, action) => {
+const product = (state = { productsList: [] }, action) => {
   switch (action.type) {
-    case 'SHOW_PRODUCTS':
-      return { ...state, productsList: action.products }
+    case 'LOAD_PRODUCTS':
+      return { ...state, productsList: action.products.concat(state.productsList) }
     case 'SELECT_PRODUCT':
       return { ...state, selectedProduct: action.selectedProduct }
     case 'ADD_PRODUCT':

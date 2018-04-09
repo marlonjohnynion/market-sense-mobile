@@ -12,6 +12,11 @@ const order = (state = initialState, action) => {
         currentOrder: action.order,
         ordersList: insertItemToArray(state.ordersList, action.order)
       }
+    case 'LOAD_ORDERS':
+      return {
+        ...state,
+        ordersList: action.orders.concat(state.ordersList)
+      }
     default:
       return state
   }
