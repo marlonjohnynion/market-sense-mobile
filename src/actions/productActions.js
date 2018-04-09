@@ -2,8 +2,14 @@ import firebase from '../common/firebase'
 
 export const loadProducts = () => {
   return async (dispatch) => {
-    const query = await firebase.database().ref('/products').once('value')
-    const products = await query.val()
+    const products = []
+    const data = await firebase.database().ref('/products').once('value')
+    data.forEach((child) => {
+      products.push({
+        key: child.key,
+        ...child.val()
+      })
+    })
     dispatch(viewProducts(products))
   }
 }
