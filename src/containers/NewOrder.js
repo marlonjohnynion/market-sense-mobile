@@ -9,7 +9,7 @@ import { formValueSelector } from 'redux-form'
 import OrderForm from '../components/OrderForm'
 import { addOrder } from '../actions/orderActions'
 
-export const Order = ({ state, orderData, actions, selectedProduct }) => {
+export const NewOrder = ({ state, orderData, actions, selectedProduct }) => {
   return (
     <Container>
       <Content>
@@ -33,4 +33,4 @@ const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators({ addOrder }, dispatch)
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Order)
+export default connect(mapStateToProps, mapDispatchToProps)(NewOrder)
