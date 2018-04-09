@@ -1,14 +1,15 @@
 import React from 'react'
 import { View, Image, Text, StyleSheet, TouchableWithoutFeedback } from 'react-native'
+import { roundToTwoFixedDecimalPlaces } from '../common/helpers'
 
-const ProductListView = ({ product, selectProduct }) => {
+const ProductListItem = ({ product, selectProduct }) => {
   return (
     <TouchableWithoutFeedback onPress={() => { selectProduct(product) }}>
       <View style={styles.viewStyle}>
         <Image source={{ uri: product.productImageUri }} style={styles.productImage}/>
         <Text style={styles.productLocation}>{product.productLocation}</Text>
         <Text style={styles.productTitle}>{product.productTitle}</Text>
-        <Text style={styles.productPrice}>{product.productPrice}</Text>
+        <Text style={styles.productPrice}>₱{roundToTwoFixedDecimalPlaces(product.productPrice)}</Text>
         <Text style={styles.productDescription} numberOfLines={3}>{product.productDescription}</Text>
       </View>
     </TouchableWithoutFeedback>
@@ -24,4 +25,4 @@ const styles = StyleSheet.create({
   viewStyle: { padding: 20 }
 })
 
-export default ProductListView
+export default ProductListItem
