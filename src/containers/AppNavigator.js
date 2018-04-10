@@ -1,5 +1,7 @@
 import React from 'react'
 import { addNavigationHelpers, StackNavigator, SwitchNavigator, DrawerNavigator, TabNavigator } from 'react-navigation'
+import { View } from 'react-native'
+import { Icon } from 'native-base'
 import { createReduxBoundAddListener } from 'react-navigation-redux-helpers'
 import { connect } from 'react-redux'
 import Login from '../containers/Login'
@@ -9,6 +11,21 @@ import NewOrder from './NewOrder'
 import OrderConfirmation from './OrderConfirmationContainer'
 import OrdersList from './OrdersListContainer'
 import TabBarIcon from '../components/TabBarIcon'
+import Drawer from '../components/Drawer'
+
+const transparentHeaderNavOptions = {
+  headerStyle: {
+    position: 'absolute',
+    backgroundColor: 'transparent',
+    zIndex: 100,
+    top: 0,
+    left: 0,
+    right: 0
+  },
+  headerBackTitleStyle: {
+    color: 'white'
+  }
+}
 
 const ProductsNav = StackNavigator({
   ProductsList: {
@@ -24,17 +41,7 @@ const ProductsNav = StackNavigator({
   OrderData: {
     screen: OrderConfirmation,
     navigationOptions: {
-      headerStyle: {
-        position: 'absolute',
-        backgroundColor: 'transparent',
-        zIndex: 100,
-        top: 0,
-        left: 0,
-        right: 0
-      },
-      headerBackTitleStyle: {
-        color: 'white'
-      }
+      ...transparentHeaderNavOptions
     }
   },
   Product: {
@@ -52,6 +59,12 @@ const OrdersNav = StackNavigator({
     screen: OrdersList,
     navigationOptions: {
       title: 'Orders List'
+    }
+  },
+  OrderReceipt: {
+    screen: OrderConfirmation,
+    navigationOptions: {
+      title: 'Receipt'
     }
   }
 }, {
@@ -76,9 +89,26 @@ const AuthNav = TabNavigator({
   })
 })
 
+const DrawerIcon = ({name, focused, tintColor}) => (
+  <Icon name={name} style={{color: tintColor}}/>
+)
 const AppNav = DrawerNavigator({
-  Products: ProductsNav,
-  Orders: OrdersNav
+  Products: {
+    screen: ProductsNav,
+    navigationOptions: {
+      title: 'Products',
+      drawerIcon: <DrawerIcon name={'nutrition'}/>
+    }
+  },
+  Orders: {
+    screen: OrdersNav,
+    navigationOptions: {
+      title: 'My Orders',
+      drawerIcon: <DrawerIcon name={'cart'}/>
+    }
+  }
+}, {
+  contentComponent: Drawer
 })
 
 export const AppNavigator = SwitchNavigator({
