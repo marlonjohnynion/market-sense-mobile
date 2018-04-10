@@ -5,7 +5,8 @@ import { loadOrders } from './orderActions'
 
 export const loginSuccess = (values) => ({
   type: actions.LOGIN,
-  email: values.email
+  email: values.email,
+  uid: values.uid
 })
 
 export const loginFail = (error) => ({
@@ -42,6 +43,7 @@ export const authenticateUser = (values) => {
         .auth()
         .signInAndRetrieveDataWithEmailAndPassword(email, password)
       if (firebase.auth().currentUser) {
+        values.uid = firebase.auth().currentUser.uid
         dispatch(loadProducts())
         dispatch(loadOrders())
         dispatch(loginSuccess(values))
