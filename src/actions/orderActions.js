@@ -13,6 +13,8 @@ export const addOrder = (order) => {
       ...order,
       invoiceNumber: generateInvoiceNumber(),
       quantity: parseInt(order.quantity),
+      status: 'Pending',
+      userKey: getState().user.uid,
       product: {
         ...parsedProductData
       }
@@ -56,3 +58,8 @@ export const loadOrders = () => {
     }
   }
 }
+
+export const viewOrderReceipt = (order) => ({
+  type: 'VIEW_ORDER_RECEIPT',
+  order: order
+})

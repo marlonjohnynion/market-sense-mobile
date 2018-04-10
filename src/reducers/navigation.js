@@ -25,6 +25,9 @@ const navReducer = (state = initialState, action) => {
     case 'VIEW_ORDER':
       nextState = router.getStateForAction(NavigationActions.navigate({ routeName: 'OrderData' }), state)
       break
+    case 'VIEW_ORDER_RECEIPT':
+      nextState = router.getStateForAction(NavigationActions.navigate({ routeName: 'OrderReceipt'}), state)
+      break
     default:
       nextState = router.getStateForAction(action, state)
       break

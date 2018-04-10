@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import { getDateInWords, getFullAddress, getTotalPrice, roundToTwoFixedDecimalPlaces } from '../common/helpers'
 
 const OrderConfirmation = props => {
-  const { product, quantity, deliveryDate, invoiceNumber, deliveryAddressLine1, deliveryAddressLine2, city, province, contact } = props.order
+  const { product, quantity, deliveryDate, invoiceNumber, deliveryAddressLine1, deliveryAddressLine2, city, province, contact, status } = props.order
   const { productTitle, productPrice, lotSize, productOwner } = product
   const subTotalPrice = roundToTwoFixedDecimalPlaces(getTotalPrice(quantity, productPrice))
   const vatableSales = roundToTwoFixedDecimalPlaces(subTotalPrice / 1.12)
@@ -25,7 +25,7 @@ const OrderConfirmation = props => {
           <Text style={styles.priceLabel}>Total Due</Text>
         </Container>
         <Container style={styles.deliveryStatusContainer}>
-          <Text style={styles.deliveryStatus}>Sent</Text>
+          <Text style={styles.deliveryStatus}>{status}</Text>
         </Container>
       </View>
       <Content>
@@ -130,12 +130,12 @@ const styles = StyleSheet.create({
   },
   deliveryStatus: {
     color: 'white',
-    fontSize: 16
+    fontSize: 19
   },
   deliveryStatusContainer: {
     position: 'absolute',
     right: 20,
-    top: 120
+    top: 115
   },
   invoiceLabel: {
     fontSize: 15,

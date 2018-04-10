@@ -17,6 +17,11 @@ const order = (state = initialState, action) => {
         ...state,
         ordersList: action.orders.concat(state.ordersList)
       }
+    case 'VIEW_ORDER_RECEIPT':
+      return {
+        ...state,
+        currentOrder: action.order
+      }
     default:
       return state
   }

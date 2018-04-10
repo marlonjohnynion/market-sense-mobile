@@ -2,13 +2,13 @@ import React from 'react'
 import { ListItem, Left, Thumbnail, Body, Text, Right } from 'native-base'
 import Icon from 'react-native-vector-icons/Ionicons'
 import { StyleSheet } from 'react-native'
-import { roundToTwoFixedDecimalPlaces } from '../common/helpers'
+import { roundToTwoFixedDecimalPlaces, getDateInWords } from '../common/helpers'
 
 const OrdersListItem = props => {
-  const { invoiceNumber, product, quantity, deliveryDate } = props.order
+  const { invoiceNumber, product, quantity, deliveryDate, status } = props.order
   const { productImageUri, productTitle, productPrice } = product
   return (
-    <ListItem avatar>
+    <ListItem avatar button onPress={() => { props.onPress(props.order) }}>
       <Left>
         <Thumbnail
           source={{ uri: productImageUri }}/>
@@ -22,8 +22,8 @@ const OrdersListItem = props => {
         </Text>
       </Body>
       <Right>
-        <Text note>{deliveryDate}</Text>
-        <Text note>Delivered</Text>
+        <Text note>{getDateInWords(deliveryDate)}</Text>
+        <Text note>{status}</Text>
       </Right>
     </ListItem>
   )
