@@ -12,6 +12,7 @@ import OrderConfirmation from './OrderConfirmationContainer'
 import OrdersList from './OrdersListContainer'
 import TabBarIcon from '../components/TabBarIcon'
 import Drawer from '../components/Drawer'
+import NewProduct from '../containers/NewProduct'
 
 const transparentHeaderNavOptions = {
   headerStyle: {
@@ -89,8 +90,8 @@ const AuthNav = TabNavigator({
   })
 })
 
-const DrawerIcon = ({name, focused, tintColor}) => (
-  <Icon name={name} style={{color: tintColor}}/>
+const DrawerIcon = ({ name, focused, tintColor }) => (
+  <Icon name={name} style={{ color: tintColor }}/>
 )
 const AppNav = DrawerNavigator({
   Products: {
@@ -105,6 +106,13 @@ const AppNav = DrawerNavigator({
     navigationOptions: {
       title: 'My Orders',
       drawerIcon: <DrawerIcon name={'cart'}/>
+    }
+  },
+  NewProduct: {
+    screen: NewProduct,
+    navigationOptions: {
+      title: 'New Product',
+      drawerIcon: <DrawerIcon name={'grid'}/>
     }
   }
 }, {
