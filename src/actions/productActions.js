@@ -20,6 +20,23 @@ export const loadProducts = () => {
   }
 }
 
+export const addProduct = (product) => {
+  return async (dispatch, getState) => {
+    const payload = {
+      ownerKey: '123123',
+      ...product
+    }
+    console.log('PRODUCT PAYLOAD', payload)
+    try {
+      await firebase.database().ref('/products').push(payload)
+      // dispatch({ type: 'ADD_PRODUCT', product: product })
+    } catch (e) {
+      throw new Error(e)
+    }
+
+  }
+}
+
 export const checkProductAvailability = () => {
   return async (dispatch) => {
     dispatch({type: 'VIEW_PRODUCT_AVAILABILITY'})
