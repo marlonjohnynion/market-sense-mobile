@@ -2,16 +2,16 @@ import React from 'react'
 import DatePicker from 'react-native-datepicker'
 
 export const Picker = (props) => {
-  const { onDateChange, selectedDate } = props
+  const { onDateChange, selectedDate, minDate, maxDate } = props
   return (
     <DatePicker
-      // style={{position: 'absolute', marginTop: 30, left: 0}}
+      style={{position: 'relative'}}
       date={!selectedDate ? new Date() : selectedDate}
       mode="date"
-      placeholder="select date"
-      format="YYYY-MM-DD"
-      minDate="2016-05-01"
-      maxDate="2016-06-01"
+      minDate={minDate}
+      maxDate={maxDate}
+      placeholder="Select Date"
+      format="ll"
       confirmBtnText="Confirm"
       cancelBtnText="Cancel"
       customStyles={{
