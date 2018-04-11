@@ -7,7 +7,6 @@ import DataList from '../components/DataList'
 import OrdersListItem from '../components/OrdersListItem'
 
 const ListItem = ({ data, actions }) => {
-  console.log('My Sales', data)
   return (
     <OrdersListItem key={data.invoiceNumber} order={data} onPress={actions.viewSaleReceipt}/>
   )

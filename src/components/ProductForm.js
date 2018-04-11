@@ -34,7 +34,6 @@ const inventoryInformationFields = [
 const GeneratedGenericFields = ({ fields, initialValues }) => {
   return fields.map(field => {
     const defaultValue = initialValues && initialValues[field.name] ? initialValues[field.name] : undefined
-    console.log(defaultValue)
     return (
       <View key={field.name}>
         <Item stackedLabel>
@@ -49,7 +48,6 @@ const GeneratedGenericFields = ({ fields, initialValues }) => {
 
 const ProductForm = props => {
   const { handleSubmit, actions, formValues, initialValues } = props
-  // console.log('PRODUCT FORM', initialValues)
   const productImage = initialValues && initialValues.productImageUri ? {uri: initialValues.productImageUri} : require('../assets/images/checklist.jpg')
   const { minDeliveryDate, maxDeliveryDate } = formValues
   return (
