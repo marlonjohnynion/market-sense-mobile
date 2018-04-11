@@ -19,6 +19,7 @@ import HeaderButtons from 'react-navigation-header-buttons'
 import IonIcons from 'react-native-vector-icons/Ionicons'
 import { initiateProductAdd } from '../actions/productActions'
 import MySales from './MySales'
+import Register from './Register'
 
 const transparentHeaderNavOptions = {
   headerStyle: {
@@ -126,6 +127,9 @@ const MyProductsNav = StackNavigator({
 const AuthNav = TabNavigator({
   Login: {
     screen: Login
+  },
+  Register: {
+    screen: Register
   }
 }, {
   tabBarOptions: {

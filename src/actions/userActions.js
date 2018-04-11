@@ -19,18 +19,32 @@ export const registerFail = (error) => ({
   error: error
 })
 
-export const registerUser = (email, password) => {
+export const registerUser = values => {
   return async (dispatch) => {
+    const { email, password, emailRepeat, firstName, lastName, passwordRepeat } = values
     try {
+      if (!email || !password || !firstName || !lastName || !emailRepeat || !passwordRepeat) {
+        throw new Error('Please fill up all the fields!')
+      }
+      if (password !== passwordRepeat) {
+        throw new Error('Passwords do not match!')
+      }
+      if (email !== emailRepeat) {
+        throw new Error('Emails do not match!')
+      }
       await firebase
         .auth()
         .createUserWithEmailAndPassword(email, password)
-      // if user is registered, we will login automatically
       if (firebase.auth().currentUser) {
-        dispatch(loginSuccess(email, password))
+        await firebase.database().ref('/users').set({
+          firstName: firstName,
+          lastName: lastName,
+          ownerAvatar: 'https://pixel.nymag.com/imgs/daily/selectall/2018/03/05/05-patrick.w710.h473.jpg'
+        })
+        toast(`You're registered. Please login!`)
       }
     } catch (e) {
-      dispatch(registerFail(e))
+      toast(e.toString())
     }
   }
 }
