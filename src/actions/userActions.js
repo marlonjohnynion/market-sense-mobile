@@ -2,6 +2,7 @@ import * as actions from './types/userActionTypes'
 import { loadProducts } from './productActions'
 import firebase from '../common/firebase'
 import { loadOrders } from './orderActions'
+import { toast } from '../common/helpers'
 
 export const loginSuccess = (values) => ({
   type: actions.LOGIN,
@@ -49,7 +50,7 @@ export const authenticateUser = (values) => {
         dispatch(loginSuccess(values))
       }
     } catch (e) {
-      dispatch(loginFail(e))
+      toast('Wrong password/email combination')
     }
   }
 }
