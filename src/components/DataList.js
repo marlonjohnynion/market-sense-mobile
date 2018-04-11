@@ -4,7 +4,7 @@ import { ListView } from 'react-native'
 import OrdersListItem from './OrdersListItem'
 
 export const DataList = ({ data, actions, RowComponent, RightHiddenRowComponent }) => {
-  const HiddenComponent = (data, actions) => {
+  const HiddenComponent = (data) => {
     if (RightHiddenRowComponent) {
       return <RightHiddenRowComponent data={data} actions={actions}/>
     }
