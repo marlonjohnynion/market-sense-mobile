@@ -1,8 +1,8 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
-import { Form, Item, Label, Input, Button, InputGroup, Content } from 'native-base'
+import { Form, Item, Label, Input, Button, Content } from 'native-base'
 import { SafeAreaView } from 'react-navigation'
-import { Image, Text, ScrollView, StyleSheet } from 'react-native'
+import { View, Image, Text, ScrollView, StyleSheet } from 'react-native'
 import DatePicker from './DatePicker'
 import { getDateInWords } from '../common/helpers'
 
@@ -14,59 +14,65 @@ const DeliveryDatePicker = (props) => {
 }
 
 const GenericField = (props) => {
-  const {input, defaultValue} = props
-  return <Input style={styles.input} onChange={input.onChange} placeholder={props.placeholder}/>
+  const { input, defaultValue } = props
+  return <Input style={styles.input} onChange={input.onChange} placeholder={props.placeholder} defaultValue={defaultValue}/>
+}
+
+const productInformationFields = [
+  { name: 'productTitle', title: 'Title' },
+  { name: 'productCategory', title: 'Category' },
+  { name: 'productDescription', title: 'Description' },
+  { name: 'productLocation', title: 'Location' }
+]
+
+const inventoryInformationFields = [
+  { name: 'lotSize', title: 'Lot Size' },
+  { name: 'productPrice', title: 'Price per Lot' },
+  { name: 'maxLots', title: 'Maximum Number of Lots Offered' }
+]
+
+const GeneratedGenericFields = ({ fields, initialValues }) => {
+  return fields.map(field => {
+    const defaultValue = initialValues && initialValues[field.name] ? initialValues[field.name] : undefined
+    console.log(defaultValue)
+    return (
+      <View key={field.name}>
+        <Item stackedLabel>
+          <Label>{field.title}</Label>
+          <Field name={field.name} component={GenericField} defaultValue={defaultValue}/>
+        </Item>
+      </View>
+    )
+  }
+  )
 }
 
 const ProductForm = props => {
-  const { handleSubmit, actions, formValues } = props
-  console.log(formValues)
+  const { handleSubmit, actions, formValues, initialValues } = props
+  // console.log('PRODUCT FORM', initialValues)
+  const productImage = initialValues && initialValues.productImageUri ? {uri: initialValues.productImageUri} : require('../assets/images/checklist.jpg')
   const { minDeliveryDate, maxDeliveryDate } = formValues
   return (
     <ScrollView>
       <SafeAreaView>
-        <Image source={require('../assets/images/checklist.jpg')} style={styles.image}/>
+        <Image source={productImage} style={styles.image}/>
         <Content>
           <Form style={styles.form}>
             <Text style={styles.mainHeading}>Product Information</Text>
-            <Item stackedLabel>
-              <Label>Title</Label>
-              <Field name='productTitle' component={GenericField}/>
-            </Item>
-            <Item stackedLabel>
-              <Label>Category</Label>
-              <Field name='productCategory' component={GenericField}/>
-            </Item>
-            <Item stackedLabel>
-              <Label>Description</Label>
-              <Field name='productDescription' component={GenericField}/>
-            </Item>
-            <Item stackedLabel>
-              <Label>Location</Label>
-              <Field name='productLocation' component={GenericField}/>
-            </Item>
+            <GeneratedGenericFields fields={productInformationFields} initialValues={initialValues} />
             <Text style={styles.mainHeading}>Inventory Information</Text>
-            <Item stackedLabel>
-              <Label>Lot Size</Label>
-              <Field name='lotSize' component={GenericField}/>
-            </Item>
-            <Item stackedLabel>
-              <Label>Price per Lot</Label>
-              <Field name='productPrice' component={GenericField}/>
-            </Item>
-            <Item stackedLabel>
-              <Label>Maximum Lots Offered</Label>
-              <Field name='maxLots' component={GenericField}/>
-            </Item>
+            <GeneratedGenericFields fields={inventoryInformationFields} initialValues={initialValues}/>
 
             <Text style={styles.mainHeading}>Delivery Information</Text>
             <Item stackedLabel style={styles.datePicker}>
               <Label>Availability</Label>
-              <Field name='minDeliveryDate' component={DeliveryDatePicker} date={!minDeliveryDate ? new Date() : minDeliveryDate} minDate={getDateInWords(new Date())}/>
+              <Field name='minDeliveryDate' component={DeliveryDatePicker}
+                     date={!minDeliveryDate ? new Date() : minDeliveryDate} minDate={getDateInWords(new Date())}/>
             </Item>
             <Item stackedLabel>
               <Label>Expiry </Label>
-              <Field name='maxDeliveryDate' date={!maxDeliveryDate ? new Date() : maxDeliveryDate} component={DeliveryDatePicker} />
+              <Field name='maxDeliveryDate' date={!maxDeliveryDate ? new Date() : maxDeliveryDate}
+                     component={DeliveryDatePicker} minDate={minDeliveryDate}/>
             </Item>
             <Button block success style={styles.button} onPress={handleSubmit(actions.submitAction)}>
               <Text style={styles.buttonText}>Submit Product</Text>

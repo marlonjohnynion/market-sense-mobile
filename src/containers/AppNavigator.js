@@ -14,6 +14,7 @@ import TabBarIcon from '../components/TabBarIcon'
 import Drawer from '../components/Drawer'
 import NewProduct from '../containers/NewProduct'
 import MyProducts from './MyProducts'
+import EditProduct from './EditProduct'
 
 const transparentHeaderNavOptions = {
   headerStyle: {
@@ -79,6 +80,12 @@ const MyProductsNav = StackNavigator({
     navigationOptions: {
       title: 'My Products'
     }
+  },
+  EditProduct: {
+    screen: EditProduct,
+    navigationOptions: {
+      title: 'Edit Product'
+    }
   }
 }, {
   initialRouteName: 'UserProducts'
@@ -124,7 +131,7 @@ const AppNav = DrawerNavigator({
     screen: MyProductsNav,
     navigationOptions: {
       title: 'My Products',
-      drawerIcon: <DrawerIcon name={'cart'}/>
+      drawerIcon: <DrawerIcon name={'nutrition'}/>
     }
   },
   NewProduct: {
