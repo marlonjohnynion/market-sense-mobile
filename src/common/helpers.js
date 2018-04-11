@@ -1,3 +1,5 @@
+import { Toast } from 'native-base'
+
 export function insertItemToArray (array, item) {
   let newArray = array.slice()
   newArray.splice(newArray.length, 0, item)
@@ -37,4 +39,16 @@ export function getFullAddress (...args) {
 
 export function getDateInWords (date) {
   return new Date(date).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})
+}
+
+export function toast (message) {
+  Toast.show({
+    text: String(message),
+    position: 'bottom',
+    buttonText: 'Okay'
+  })
+}
+
+export function toastGenericErrorMsg () {
+  toast('Something went wrong. Please try again.')
 }
