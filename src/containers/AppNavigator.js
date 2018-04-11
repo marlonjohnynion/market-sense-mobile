@@ -13,6 +13,7 @@ import OrdersList from './OrdersListContainer'
 import TabBarIcon from '../components/TabBarIcon'
 import Drawer from '../components/Drawer'
 import NewProduct from '../containers/NewProduct'
+import MyProducts from './MyProducts'
 
 const transparentHeaderNavOptions = {
   headerStyle: {
@@ -72,6 +73,17 @@ const OrdersNav = StackNavigator({
   initialRouteName: 'OrdersList'
 })
 
+const MyProductsNav = StackNavigator({
+  UserProducts: {
+    screen: MyProducts,
+    navigationOptions: {
+      title: 'My Products'
+    }
+  }
+}, {
+  initialRouteName: 'UserProducts'
+})
+
 const AuthNav = TabNavigator({
   Login: {
     screen: Login
@@ -105,6 +117,13 @@ const AppNav = DrawerNavigator({
     screen: OrdersNav,
     navigationOptions: {
       title: 'My Orders',
+      drawerIcon: <DrawerIcon name={'cart'}/>
+    }
+  },
+  MyProducts: {
+    screen: MyProductsNav,
+    navigationOptions: {
+      title: 'My Products',
       drawerIcon: <DrawerIcon name={'cart'}/>
     }
   },
