@@ -8,7 +8,7 @@ const MyProductsListItem = props => {
   const { product, actions } = props
   const { productImageUri, productTitle, productPrice, lotSize, productDescription, productCategory } = product
   return (
-    <ListItem avatar button onPress={() => { actions.viewProduct(product) }}>
+    <ListItem avatar button onPress={() => { actions.editProduct(product) }}>
       <Left>
         <Thumbnail
           source={{ uri: productImageUri }}/>
