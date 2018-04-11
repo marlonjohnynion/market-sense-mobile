@@ -48,7 +48,7 @@ const ProductForm = props => {
             <Text style={styles.mainHeading}>Inventory Information</Text>
             <Item stackedLabel>
               <Label>Lot Size</Label>
-              <Field name='productTitle' component={GenericField}/>
+              <Field name='lotSize' component={GenericField}/>
             </Item>
             <Item stackedLabel>
               <Label>Price per Lot</Label>
@@ -56,7 +56,7 @@ const ProductForm = props => {
             </Item>
             <Item stackedLabel>
               <Label>Maximum Lots Offered</Label>
-              <Field name='productTitle' component={GenericField}/>
+              <Field name='maxLots' component={GenericField}/>
             </Item>
 
             <Text style={styles.mainHeading}>Delivery Information</Text>
