@@ -18,6 +18,7 @@ import EditProduct from './EditProduct'
 import HeaderButtons from 'react-navigation-header-buttons'
 import IonIcons from 'react-native-vector-icons/Ionicons'
 import { initiateProductAdd } from '../actions/productActions'
+import MySales from './MySales'
 
 const transparentHeaderNavOptions = {
   headerStyle: {
@@ -77,6 +78,23 @@ const OrdersNav = StackNavigator({
   initialRouteName: 'OrdersList'
 })
 
+const SalesNav = StackNavigator({
+  Sales: {
+    screen: MySales,
+    navigationOptions: {
+      title: 'Sales List'
+    }
+  },
+  SaleReceipt: {
+    screen: OrderConfirmation,
+    navigationOptions: {
+      title: 'Sale Receipt'
+    }
+  }
+}, {
+  initialRouteName: 'Sales'
+})
+
 const MyProductsNav = StackNavigator({
   UserProducts: {
     screen: MyProducts,
@@ -134,6 +152,13 @@ const AppNav = DrawerNavigator({
       drawerIcon: <DrawerIcon name={'nutrition'}/>
     }
   },
+  MyProducts: {
+    screen: MyProductsNav,
+    navigationOptions: {
+      title: 'My Products',
+      drawerIcon: <DrawerIcon name={'copy'}/>
+    }
+  },
   Orders: {
     screen: OrdersNav,
     navigationOptions: {
@@ -141,11 +166,11 @@ const AppNav = DrawerNavigator({
       drawerIcon: <DrawerIcon name={'cart'}/>
     }
   },
-  MyProducts: {
-    screen: MyProductsNav,
+  MySales: {
+    screen: SalesNav,
     navigationOptions: {
-      title: 'My Products',
-      drawerIcon: <DrawerIcon name={'nutrition'}/>
+      title: 'My Sales',
+      drawerIcon: <DrawerIcon name={'paper'}/>
     }
   }
 }, {

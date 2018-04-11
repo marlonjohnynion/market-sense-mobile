@@ -1,7 +1,8 @@
 import { insertItemToArray } from '../common/helpers'
 
 const initialState = {
-  ordersList: []
+  ordersList: [],
+  ordersMadeToUser: []
 }
 
 const order = (state = initialState, action) => {
@@ -17,7 +18,17 @@ const order = (state = initialState, action) => {
         ...state,
         ordersList: action.orders.concat(state.ordersList)
       }
+    case 'LOAD_ORDERS_MADE_TO_USER':
+      return {
+        ...state,
+        ordersMadeToUser: action.orders.concat(state.ordersMadeToUser)
+      }
     case 'VIEW_ORDER_RECEIPT':
+      return {
+        ...state,
+        currentOrder: action.order
+      }
+    case 'VIEW_SALE_RECEIPT':
       return {
         ...state,
         currentOrder: action.order
