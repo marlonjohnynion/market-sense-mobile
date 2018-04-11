@@ -42,7 +42,6 @@ export const addProduct = (product) => {
       productImageUri: 'https://firebasestorage.googleapis.com/v0/b/marketsense-b09f8.appspot.com/o/products%2Fp2.png?alt=media&token=f12dde5f-74c3-4fb0-9431-5f923b722a3c',
       ...product
     }
-    console.log('PRODUCT PAYLOAD', payload)
     try {
       await firebase.database().ref('/products').push(payload)
       // dispatch({ type: 'ADD_PRODUCT', product: product })
@@ -65,7 +64,6 @@ export const updateProduct = (product) => {
     try {
       const productRef = await firebase.database().ref('/products')
       await productRef.child(product.key).update(payload)
-      dispatch({type: 'UPDATE_PRODUCT', product: product})
     } catch (e) {
       toastGenericErrorMsg()
     }
@@ -77,7 +75,6 @@ export const deleteProduct = (product) => {
     try {
       const productRef = await firebase.database().ref('/products')
       await productRef.child(product.key).remove()
-      dispatch({type: 'DELETE_PRODUCT', product: product})
     } catch (e) {
       toastGenericErrorMsg()
     }

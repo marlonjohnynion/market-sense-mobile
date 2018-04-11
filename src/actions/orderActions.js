@@ -21,40 +21,9 @@ export const addOrder = (order) => {
         ...parsedProductData
       }
     }
-    const newOrder = {
-      ...payload,
-      product: {
-        ...selectedProduct
-      }
-    }
     try {
       await firebase.database().ref('/orders').push(payload)
-      dispatch({ type: 'ADD_ORDER', order: newOrder })
-    } catch (e) {
-      throw new Error(e)
-    }
-  }
-}
-
-export const loadOrders = () => {
-  return async (dispatch) => {
-    try {
-      const orders = []
-      const data = await firebase.database().ref('/orders').once('value')
-      for (const [key, resData] of Object.entries(data.val())) {
-        const order = {
-          key: key,
-          ...resData
-        }
-        const { product } = order
-        const productData = await firebase.database().ref(`/products/${product.key}`).once('value')
-        order.product = {
-          ...productData.val(),
-          ...order.product
-        }
-        orders.push(order)
-      }
-      dispatch({ type: 'LOAD_ORDERS', orders: orders })
+      dispatch({ type: 'ADD_ORDER_NAV' })
     } catch (e) {
       throw new Error(e)
     }
@@ -67,8 +36,7 @@ export const loadOrdersMadeToUser = () => {
     try {
       const orders = []
       let data = await firebase.database().ref('/orders')
-      data = await data.orderByChild('sellerKey').equalTo('Bkca5APqUbTcHFRjuqStnu9Mlph1').once('value')
-      console.log(data)
+      data = await data.orderByChild('sellerKey').equalTo(userKey).once('value')
       for (const [key, resData] of Object.entries(data.val())) {
         const order = {
           key: key,
@@ -122,14 +90,14 @@ export const updateOrderStatus = (order) => {
 }
 
 export const sendStatusUpdate = (order, status) => {
-  return async (dispatch) => {
+  return async () => {
     try {
       const orderRef = firebase.database().ref('/orders')
       await orderRef.child(order.key).update({
         status: status
       })
     } catch (e) {
-      console.log(e)
+      throw new Error(e)
     }
   }
 }

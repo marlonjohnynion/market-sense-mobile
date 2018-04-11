@@ -3,6 +3,7 @@ import { loadProducts } from './productActions'
 import firebase from '../common/firebase'
 import { loadOrders, loadOrdersMadeToUser } from './orderActions'
 import { toast } from '../common/helpers'
+import { initializeListeners } from './listeners'
 
 export const loginSuccess = (values) => ({
   type: actions.LOGIN,
@@ -38,17 +39,16 @@ export const registerUser = (email, password) => {
 
 export const authenticateUser = (values) => {
   return async (dispatch) => {
-    const {email, password} = values
+    const { email, password } = values
     try {
       await firebase
         .auth()
         .signInAndRetrieveDataWithEmailAndPassword(email, password)
       if (firebase.auth().currentUser) {
         values.uid = firebase.auth().currentUser.uid
-        dispatch(loadProducts())
-        dispatch(loadOrders())
-        dispatch(loadOrdersMadeToUser())
         dispatch(loginSuccess(values))
+        dispatch(loadOrdersMadeToUser())
+        initializeListeners(dispatch)
       }
     } catch (e) {
       toast('Wrong password/email combination')

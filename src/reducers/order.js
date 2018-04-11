@@ -18,6 +18,24 @@ const order = (state = initialState, action) => {
         ...state,
         ordersList: action.orders.concat(state.ordersList)
       }
+    case 'UPDATE_ORDER':
+      const ordersList = state.ordersList.map(order => {
+        if (order.key !== action.order.key) {
+          return order
+        }
+        return { ...action.order }
+      })
+      const ordersMadeToUser = state.ordersMadeToUser.map(order => {
+        if (order.key !== action.order.key) {
+          return order
+        }
+        return { ...action.order }
+      })
+      return {
+        ...state,
+        ordersList: ordersList,
+        ordersMadeToUser: ordersMadeToUser
+      }
     case 'LOAD_ORDERS_MADE_TO_USER':
       return {
         ...state,
