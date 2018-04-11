@@ -2,7 +2,7 @@ import React from 'react'
 import { View } from 'react-native'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import NewProductForm from '../components/NewProductForm'
+import NewProductForm from '../components/ProductForm'
 import { formValueSelector } from 'redux-form'
 import { addProduct } from '../actions/productActions'
 
@@ -18,7 +18,7 @@ const NewProduct = props => {
 const selector = formValueSelector('productForm')
 
 const mapDispatchToProps = (dispatch) => ({
-  actions: bindActionCreators({ addProduct }, dispatch)
+  actions: bindActionCreators({ submitAction: addProduct }, dispatch)
 })
 
 const mapStateToProps = state => ({

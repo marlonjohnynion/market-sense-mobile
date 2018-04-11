@@ -68,7 +68,7 @@ const ProductForm = props => {
               <Label>Expiry </Label>
               <Field name='maxDeliveryDate' date={!maxDeliveryDate ? new Date() : maxDeliveryDate} component={DeliveryDatePicker} />
             </Item>
-            <Button block success style={styles.button} onPress={handleSubmit(actions.addProduct)}>
+            <Button block success style={styles.button} onPress={handleSubmit(actions.submitAction)}>
               <Text style={styles.buttonText}>Submit Product</Text>
             </Button>
           </Form>
