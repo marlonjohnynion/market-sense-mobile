@@ -6199,6 +6199,10 @@ react-native-maps@0.19.0:
   version "0.19.0"
   resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.19.0.tgz#ce94fad1cf360e335cb4338a68c95f791e869074"
 
+react-native-platform-touchable@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-native-platform-touchable/-/react-native-platform-touchable-1.1.1.tgz#fde4acc65eea585d28b164d0c3716a42129a68e4"
+
 react-native-safe-area-view@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-view/-/react-native-safe-area-view-0.7.0.tgz#38f5ab9368d6ef9e5d18ab64212938af3ec39421"
@@ -6330,6 +6334,12 @@ react-native@0.52.0:
 react-navigation-current-route@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/react-navigation-current-route/-/react-navigation-current-route-1.0.0.tgz#2ce177511877914441b96f166b3b4e19be689e97"
+
+react-navigation-header-buttons@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/react-navigation-header-buttons/-/react-navigation-header-buttons-0.0.7.tgz#0f8c4adde9a0301145e9d6313c6987a8f4d2e808"
+  dependencies:
+    react-native-platform-touchable "^1.1.1"
 
 react-navigation-redux-helpers@^1.0.3:
   version "1.0.3"
