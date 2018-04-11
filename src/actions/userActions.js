@@ -1,7 +1,7 @@
 import * as actions from './types/userActionTypes'
 import { loadProducts } from './productActions'
 import firebase from '../common/firebase'
-import { loadOrders } from './orderActions'
+import { loadOrders, loadOrdersMadeToUser } from './orderActions'
 import { toast } from '../common/helpers'
 
 export const loginSuccess = (values) => ({
@@ -47,6 +47,7 @@ export const authenticateUser = (values) => {
         values.uid = firebase.auth().currentUser.uid
         dispatch(loadProducts())
         dispatch(loadOrders())
+        dispatch(loadOrdersMadeToUser())
         dispatch(loginSuccess(values))
       }
     } catch (e) {
