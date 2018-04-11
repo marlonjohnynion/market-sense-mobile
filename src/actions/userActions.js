@@ -1,7 +1,5 @@
 import * as actions from './types/userActionTypes'
-import { loadProducts } from './productActions'
 import firebase from '../common/firebase'
-import { loadOrders, loadOrdersMadeToUser } from './orderActions'
 import { toast } from '../common/helpers'
 import { initializeListeners } from './listeners'
 
@@ -38,7 +36,7 @@ export const registerUser = (email, password) => {
 }
 
 export const authenticateUser = (values) => {
-  return async (dispatch) => {
+  return async (dispatch, getState) => {
     const { email, password } = values
     try {
       await firebase
@@ -47,8 +45,7 @@ export const authenticateUser = (values) => {
       if (firebase.auth().currentUser) {
         values.uid = firebase.auth().currentUser.uid
         dispatch(loginSuccess(values))
-        dispatch(loadOrdersMadeToUser())
-        initializeListeners(dispatch)
+        initializeListeners(dispatch, getState())
       }
     } catch (e) {
       toast('Wrong password/email combination')

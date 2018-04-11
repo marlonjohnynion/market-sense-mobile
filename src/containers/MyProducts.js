@@ -25,7 +25,7 @@ const MyProducts = (props) => {
 
 const mapStateToProps = state => {
   return {
-    products: state.products.productsList
+    products: state.products.userProductsList
   }
 }
 

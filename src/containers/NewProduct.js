@@ -7,10 +7,10 @@ import { formValueSelector } from 'redux-form'
 import { addProduct } from '../actions/productActions'
 
 const NewProduct = props => {
-  const { actions, formValues } = props
+  const { actions, formValues, initialValues } = props
   return (
     <View>
-      <NewProductForm actions={actions} formValues={formValues}/>
+      <NewProductForm actions={actions} formValues={formValues} initialValues={initialValues}/>
     </View>
   )
 }
@@ -25,6 +25,10 @@ const mapStateToProps = state => ({
   formValues: {
     minDeliveryDate: selector(state, 'minDeliveryDate'),
     maxDeliveryDate: selector(state, 'maxDeliveryDate')
+  },
+  initialValues: {
+    minDeliveryDate: new Date(),
+    maxDeliveryDate: new Date()
   }
 })
 

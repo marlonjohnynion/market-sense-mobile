@@ -1,7 +1,7 @@
-import { realtimeOrderListeners } from './productListeners'
-import { realtimeProductListeners } from './orderListeners'
+import { realtimeOrderListeners } from './orderListeners'
+import { realtimeProductListeners } from './productListeners'
 
-export const initializeListeners = (dispatch) => {
-  realtimeOrderListeners(dispatch)
-  realtimeProductListeners(dispatch)
+export const initializeListeners = (dispatch, state) => {
+  realtimeOrderListeners(dispatch, state)
+  realtimeProductListeners(dispatch, state)
 }

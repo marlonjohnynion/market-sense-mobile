@@ -31,15 +31,17 @@ const order = (state = initialState, action) => {
         }
         return { ...action.order }
       })
+      const currentOrder = state.currentOrder.key === action.order.key ? {...action.order} : {...state.currentOrder}
       return {
         ...state,
         ordersList: ordersList,
-        ordersMadeToUser: ordersMadeToUser
+        ordersMadeToUser: ordersMadeToUser,
+        currentOrder: currentOrder
       }
-    case 'LOAD_ORDERS_MADE_TO_USER':
+    case 'ADD_ORDER_MADE_TO_USER':
       return {
         ...state,
-        ordersMadeToUser: action.orders.concat(state.ordersMadeToUser)
+        ordersMadeToUser: insertItemToArray([...state.ordersMadeToUser], action.order)
       }
     case 'VIEW_ORDER_RECEIPT':
       return {

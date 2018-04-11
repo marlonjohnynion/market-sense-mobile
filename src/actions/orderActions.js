@@ -30,33 +30,6 @@ export const addOrder = (order) => {
   }
 }
 
-export const loadOrdersMadeToUser = () => {
-  return async (dispatch, getState) => {
-    const userKey = getState().user.uid
-    try {
-      const orders = []
-      let data = await firebase.database().ref('/orders')
-      data = await data.orderByChild('sellerKey').equalTo(userKey).once('value')
-      for (const [key, resData] of Object.entries(data.val())) {
-        const order = {
-          key: key,
-          ...resData
-        }
-        const { product } = order
-        const productData = await firebase.database().ref(`/products/${product.key}`).once('value')
-        order.product = {
-          ...productData.val(),
-          ...order.product
-        }
-        orders.push(order)
-      }
-      dispatch({ type: 'LOAD_ORDERS_MADE_TO_USER', orders: orders })
-    } catch (e) {
-      throw new Error(e)
-    }
-  }
-}
-
 export const viewOrderReceipt = (order) => ({
   type: 'VIEW_ORDER_RECEIPT',
   order: order

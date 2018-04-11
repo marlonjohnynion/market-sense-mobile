@@ -1,41 +1,46 @@
 import firebase from '../../common/firebase'
 
-export const realtimeProductListeners = (dispatch) => {
-  const productsRef = firebase.database().ref('/products')
-  productsRef.on('child_added', addProductFromListener(dispatch))
-  productsRef.on('child_changed', updateProductFromListener(dispatch))
-  productsRef.on('child_removed', deleteProductFromListener(dispatch))
+export const realtimeOrderListeners = (dispatch, state) => {
+  const userKey = state.user.uid
+  const generalOrdersRef = firebase.database().ref('/orders')
+  const ordersRef = firebase.database().ref('/orders')
+    .orderByChild('userKey').equalTo(userKey)
+  const ordersMadeToUserRef = firebase.database().ref('/orders')
+    .orderByChild('sellerKey').equalTo(userKey)
+  ordersRef.on('child_added', addOrderFromListener(dispatch))
+  ordersMadeToUserRef.on('child_added', addOrderMadeToUser(dispatch))
+  generalOrdersRef.on('child_changed', updateOrderFromListener(dispatch))
 }
 
-export const addProductFromListener = (dispatch) => {
+export const updateOrderFromListener = (dispatch) => {
   return async (data) => {
-    const product = await getProductWithUserData(dispatch, data)
-    dispatch({ type: 'ADD_PRODUCT', product: product })
+    const order = await getOrderWithProductData(dispatch, data)
+    dispatch({ type: 'UPDATE_ORDER', order: order })
   }
 }
 
-export const deleteProductFromListener = (dispatch) => {
+export const addOrderMadeToUser = (dispatch) => {
   return async (data) => {
-    const product = data.val()
-    product.key = data.key
-    dispatch({ type: 'DELETE_PRODUCT', product: product })
+    const order = await getOrderWithProductData(dispatch, data)
+    dispatch({ type: 'ADD_ORDER_MADE_TO_USER', order: order })
   }
 }
 
-export const updateProductFromListener = (dispatch) => {
+export const addOrderFromListener = (dispatch) => {
   return async (data) => {
-    const product = await getProductWithUserData(dispatch, data)
-    dispatch({ type: 'UPDATE_PRODUCT', product: product })
+    const order = await getOrderWithProductData(dispatch, data)
+    dispatch({ type: 'ADD_ORDER', order: order })
   }
 }
 
-export const getProductWithUserData = async (dispatch, data) => {
-  const product = data.val()
-  product.key = data.key
-  let user = firebase.database().ref('/users')
-  user = await user.orderByKey().equalTo(product.ownerKey).once('value')
-  user = user.val()[product.ownerKey]
-  product.productOwner = user.name
-  product.ownerAvatar = user.avatar
-  return product
+export const getOrderWithProductData = async (dispatch, data) => {
+  const order = data.val()
+  order.key = data.key
+  const { product } = order
+  const productData = await firebase.database().ref(`/products/${product.key}`).once('value')
+  order.product = {
+    ...productData.val(),
+    ...product
+  }
+  return order
 }
