@@ -9,11 +9,11 @@ import { formValueSelector } from 'redux-form'
 import OrderForm from '../components/OrderForm'
 import { addOrder } from '../actions/orderActions'
 
-export const NewOrder = ({ state, orderData, actions, selectedProduct }) => {
+export const NewOrder = ({ state, orderData, actions, selectedProduct, initialValues }) => {
   return (
     <Container>
       <Content>
-        <OrderForm orderData={orderData} submissionHandler={actions.addOrder} product={selectedProduct}/>
+        <OrderForm initialValues={initialValues} orderData={orderData} submissionHandler={actions.addOrder} product={selectedProduct}/>
       </Content>
     </Container>
   )
@@ -25,6 +25,10 @@ const mapStateToProps = (state) => ({
   orderData: {
     deliveryDate: selector(state, 'deliveryDate'),
     quantity: selector(state, 'quantity')
+  },
+  initialValues: {
+    quantity: 1,
+    deliveryDate: state.products.selectedProduct.minDeliveryDate
   },
   selectedProduct: state.products.selectedProduct
 })

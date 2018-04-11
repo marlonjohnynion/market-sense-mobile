@@ -7,14 +7,14 @@ import DatePicker from './DatePicker'
 import OrderSummary from './OrderSummary'
 
 const DeliveryDatePicker = (props) => {
-  const { input, date } = props
+  const { input, date, minDate, maxDate } = props
   return (
-    <DatePicker onDateChange={input.onChange} selectedDate={date}/>
+    <DatePicker onDateChange={input.onChange} selectedDate={date} minDate={minDate} maxDate={maxDate}/>
   )
 }
 
 const QuantityField = (props) => {
-  return <Input onChange={props.input.onChange} defaultValue={'1'}/>
+  return <Input onChange={props.input.onChange} defaultValue={String(props.defaultValue)}/>
 }
 
 const GenericField = (props) => {
@@ -23,7 +23,7 @@ const GenericField = (props) => {
 
 const OrderForm = (props) => {
   const { deliveryDate } = props.orderData
-  const { handleSubmit, submissionHandler, product } = props
+  const { handleSubmit, submissionHandler, product, initialValues } = props
   return (
     <View>
       <SafeAreaView>
@@ -33,11 +33,11 @@ const OrderForm = (props) => {
             <Text style={{fontSize: 24, marginTop: 15, marginLeft: 15, marginBottom: 10}}>Order Information</Text>
             <Item fixedLabel>
               <Label style={{ fontSize: 18 }}>Delivery Date</Label>
-              <Field name='deliveryDate' component={DeliveryDatePicker} date={!deliveryDate ? new Date() : deliveryDate}/>
+              <Field name='deliveryDate' component={DeliveryDatePicker} date={!deliveryDate ? product.minDeliveryDate : deliveryDate} minDate={product.minDeliveryDate} maxDate={product.maxDeliveryDate}/>
             </Item>
             <Item inlineLabel>
               <Label style={{ fontSize: 18 }}>Quantity</Label>
-              <Field name='quantity' component={QuantityField}/>
+              <Field name='quantity' component={QuantityField} defaultValue={initialValues.quantity}/>
             </Item>
             <Text style={{fontSize: 24, marginTop: 15, marginLeft: 15, marginBottom: 10}}>Delivery Information</Text>
             <Item>

@@ -13,13 +13,10 @@ export const OrderConfirmationContainer = (props) => {
     return <SummaryError/>
   }
   return (
-    <View style={{marginRight: 15, marginLeft: 15}}>
-      <Text style={{fontSize: 16}}>Item: {productTitle}</Text>
-      <Text style={{fontSize: 16}}>Price: {price} per {lotSize}</Text>
-      <Text style={{fontSize: 16}}>Quantity: {quantity}</Text>
-      <Text style={{fontSize: 16}}>Total Price: {totalPrice}</Text>
-      <Text style={{fontSize: 16}}>You agree to order {quantity * lotSize} {quantity > 1 ? 'pcs' : 'pc'} of {productTitle} worth
-        ₱{totalPrice} to be delivered on</Text>
+    <View style={{ marginRight: 15, marginLeft: 15 }}>
+      <Text style={{ fontSize: 16, lineHeight: 25}}>You agree to
+        order {quantity * lotSize} {parseInt(quantity) > 1 ? ' pcs' : ' pc'} of {productTitle} worth
+        ₱{totalPrice} to be delivered on {deliveryDate}.</Text>
     </View>
   )
 }
