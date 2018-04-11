@@ -15,6 +15,9 @@ import Drawer from '../components/Drawer'
 import NewProduct from '../containers/NewProduct'
 import MyProducts from './MyProducts'
 import EditProduct from './EditProduct'
+import HeaderButtons from 'react-navigation-header-buttons'
+import IonIcons from 'react-native-vector-icons/Ionicons'
+import { initiateProductAdd } from '../actions/productActions'
 
 const transparentHeaderNavOptions = {
   headerStyle: {
@@ -77,14 +80,25 @@ const OrdersNav = StackNavigator({
 const MyProductsNav = StackNavigator({
   UserProducts: {
     screen: MyProducts,
-    navigationOptions: {
-      title: 'My Products'
+    navigationOptions: ({navigation}) => {
+      return {
+        title: 'My Products',
+        headerRight: <HeaderButtons IconComponent={IonIcons} iconSize={23} color="blue">
+          <HeaderButtons.Item title="add" iconName="ios-add-circle" onPress={() => navigation.dispatch(initiateProductAdd())} />
+        </HeaderButtons>
+      }
     }
   },
   EditProduct: {
     screen: EditProduct,
     navigationOptions: {
       title: 'Edit Product'
+    }
+  },
+  NewProduct: {
+    screen: NewProduct,
+    navigationOptions: {
+      title: 'New Product'
     }
   }
 }, {
@@ -132,13 +146,6 @@ const AppNav = DrawerNavigator({
     navigationOptions: {
       title: 'My Products',
       drawerIcon: <DrawerIcon name={'nutrition'}/>
-    }
-  },
-  NewProduct: {
-    screen: NewProduct,
-    navigationOptions: {
-      title: 'New Product',
-      drawerIcon: <DrawerIcon name={'grid'}/>
     }
   }
 }, {
