@@ -52,3 +52,7 @@ export function toast (message) {
 export function toastGenericErrorMsg () {
   toast('Something went wrong. Please try again.')
 }
+
+export function isNumber (testCase) {
+  return !isNaN(testCase)
+}
