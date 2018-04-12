@@ -5,8 +5,7 @@ import { Form, Item, Input, Label, Button, Text, Container } from 'native-base'
 
 const GenericField = (props) => {
   const { input, defaultValue } = props
-  return <Input style={styles.input} onChange={input.onChange} placeholder={props.placeholder}
-                defaultValue={defaultValue}/>
+  return <Input style={styles.input} onChange={input.onChange} placeholder={props.placeholder} defaultValue={defaultValue}/>
 }
 
 const registrationFields = [
@@ -39,8 +38,8 @@ export const RegisterForm = (props) => {
   return (
     <Container>
       <Image source={require('../assets/images/keyboard.jpeg')} style={styles.image}
-             resizeMethod={'scale'}/>
-      <ScrollView style={{ marginTop: 20 }}>
+        resizeMethod={'scale'}/>
+      <ScrollView style={styles.scrollView}>
         <Form style={styles.form}>
           <Text style={styles.mainHeading}>Register</Text>
           <Text style={styles.subHeading}>Fill up the form to complete registration.</Text>
@@ -64,6 +63,7 @@ export const RegisterForm = (props) => {
 }
 
 const styles = StyleSheet.create({
+  scrollView: { marginTop: 20 },
   buttonText: {
     color: 'white',
     fontSize: 20
@@ -74,10 +74,6 @@ const styles = StyleSheet.create({
   },
   form: {
     marginTop: 15
-  },
-  image: {
-    height: 100,
-    width: null
   },
   input: {
     fontSize: 14

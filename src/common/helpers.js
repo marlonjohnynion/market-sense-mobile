@@ -21,11 +21,11 @@ export function getCurrentRoute (navigationState) {
   return route
 }
 
-export function generateInvoiceNumber() {
+export function generateInvoiceNumber () {
   return String(new Date().getTime())
 }
 
-export function roundToTwoFixedDecimalPlaces(number) {
+export function roundToTwoFixedDecimalPlaces (number) {
   return parseFloat(number).toFixed(2)
 }
 
@@ -38,7 +38,7 @@ export function getFullAddress (...args) {
 }
 
 export function getDateInWords (date) {
-  return new Date(date).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})
+  return new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
 }
 
 export function toast (message) {

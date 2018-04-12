@@ -1,7 +1,6 @@
 import React from 'react'
-import { ScrollView, StyleSheet } from 'react-native'
+import { ScrollView, StyleSheet, Image } from 'react-native'
 import { SafeAreaView, DrawerItems } from 'react-navigation'
-import { Image } from 'react-native'
 
 export const Drawer = props => (
   <ScrollView>

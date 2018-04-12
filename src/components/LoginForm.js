@@ -1,6 +1,6 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
-import { Image } from 'react-native'
+import { Image, StyleSheet } from 'react-native'
 import { Form, Item, Input, Label, Button, Text, Container } from 'native-base'
 
 export const emailField = (props) => {
@@ -17,8 +17,8 @@ export const LoginForm = (props) => {
   const { handleSubmit, loginHandler } = props
   return (
     <Container>
-      <Image source={require('../assets/images/market.jpeg')} style={{height: 200, width: null}} resizeMethod={'scale'}/>
-      <Container style={{marginTop: 20}}>
+      <Image source={require('../assets/images/market.jpeg')} style={styles.image} resizeMethod={'scale'}/>
+      <Container style={styles.container}>
         <Form>
           <Item inlineLabel>
             <Label>Email</Label>
@@ -29,7 +29,7 @@ export const LoginForm = (props) => {
             <Field name='password' component={passwordField}/>
           </Item>
         </Form>
-        <Button block light onPress={handleSubmit(loginHandler)} style={{marginTop: 20}}>
+        <Button block light onPress={handleSubmit(loginHandler)} style={styles.button}>
           <Text>LOGIN</Text>
         </Button>
       </Container>
@@ -37,5 +37,11 @@ export const LoginForm = (props) => {
 
   )
 }
+
+const styles = StyleSheet.create({
+  image: {height: 200, width: null},
+  container: {marginTop: 20},
+  button: {marginTop: 20}
+})
 
 export default reduxForm({form: 'loginForm'})(LoginForm)

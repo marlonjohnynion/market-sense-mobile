@@ -1,7 +1,6 @@
 import React from 'react'
-import { Container, List, Content, Text, Icon, Button } from 'native-base'
+import { Container, List, Content } from 'native-base'
 import { ListView } from 'react-native'
-import OrdersListItem from './OrdersListItem'
 
 export const DataList = ({ data, actions, RowComponent, RightHiddenRowComponent }) => {
   const HiddenComponent = (data) => {

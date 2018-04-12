@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Text } from 'native-base'
+import { Text, StyleSheet } from 'native-base'
 import { View } from 'react-native'
 
 export const OrderConfirmationContainer = (props) => {
@@ -13,8 +13,8 @@ export const OrderConfirmationContainer = (props) => {
     return <SummaryError/>
   }
   return (
-    <View style={{ marginRight: 15, marginLeft: 15 }}>
-      <Text style={{ fontSize: 16, lineHeight: 25}}>You agree to
+    <View style={styles.container}>
+      <Text style={styles.confirmationText}>You agree to
         order {quantity * lotSize} {parseInt(quantity) > 1 ? ' pcs' : ' pc'} of {productTitle} worth
         ₱{totalPrice} to be delivered on {deliveryDate}.</Text>
     </View>
@@ -24,5 +24,10 @@ export const OrderConfirmationContainer = (props) => {
 const SummaryError = () => (
   <Text>Please complete order information to complete order!</Text>
 )
+
+const styles = StyleSheet.create({
+  container: { marginRight: 15, marginLeft: 15 },
+  confirmationText: { fontSize: 16, lineHeight: 25 }
+})
 
 export default OrderConfirmationContainer

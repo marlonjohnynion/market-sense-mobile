@@ -6,15 +6,15 @@ import DataList from '../components/DataList'
 import { editProduct, deleteProduct } from '../actions/productActions'
 import MyProductsListItem from '../components/MyProductsListItem'
 
-const ListItem = ({data, actions}) => {
+const ListItem = ({ data, actions }) => {
   return (
     <MyProductsListItem key={data.key} product={data} actions={actions}/>
   )
 }
 
-const RightHiddenRowComponent = ({data, actions}) => (
-  <Button full danger onPress={() => { actions.deleteProduct(data)}}>
-    <Icon active name="trash" />
+const RightHiddenRowComponent = ({ data, actions }) => (
+  <Button full danger onPress={() => { actions.deleteProduct(data) }}>
+    <Icon active name="trash"/>
   </Button>
 )
 

@@ -43,29 +43,29 @@ const OrderConfirmation = props => {
         </View>
 
         <View style={styles.orderSummary}>
-          <Container style={{height: 120}}>
+          <Container style={styles.orderSummaryContainer}>
             <Grid>
-              <Col style={{ flex: 6 }}>
+              <Col style={styles.leftCol}>
                 <Text style={styles.summaryHeading}>Item</Text>
                 <Text style={styles.regularText} numberOfLines={1}>{productTitle}</Text>
                 <Text style={styles.regularText}>{quantity}{quantity > 1 ? ' pcs' : ' pc '} pcs x ₱{roundToTwoFixedDecimalPlaces(productPrice)}</Text>
                 <Text style={styles.regularText}>{lotSize}{lotSize > 1 ? ' pcs' : ' pc '} per lot</Text>
               </Col>
-              <Col style={{ flex: 3 }} last>
+              <Col style={styles.rightCol} last>
                 <Text style={styles.summaryHeading}>Subtotal</Text>
                 <Text style={styles.subTotal} numberOfLines={1}>₱{subTotalPrice}</Text>
               </Col>
             </Grid>
           </Container>
           <View style={styles.line}/>
-          <Container style={{height: 140, paddingTop: 20}}>
+          <Container style={styles.computationContainer}>
             <Grid>
-              <Col style={{ flex: 6 }}>
+              <Col style={styles.leftCol}>
                 <Text style={styles.totalPricingSummaryLabel}>VATABLE SALES</Text>
                 <Text style={styles.totalPricingSummaryLabel}>VAT</Text>
                 <Text style={styles.totalPricingSummaryLabel}>TOTAL</Text>
               </Col>
-              <Col style={{ flex: 3 }} last>
+              <Col style={styles.rightCol} last>
                 <Text style={styles.totalPricingSummary} numberOfLines={1}>₱{vatableSales}</Text>
                 <Text style={styles.totalPricingSummary} numberOfLines={1}>₱{vat}</Text>
                 <Text style={styles.totalPricingSummary} numberOfLines={1}>₱{subTotalPrice}</Text>
@@ -81,6 +81,12 @@ const OrderConfirmation = props => {
 }
 
 const styles = StyleSheet.create({
+  computationContainer: {height: 140, paddingTop: 20},
+  leftCol: { flex: 6 },
+  rightCol: {flex: 3},
+  orderSummaryContainer: {
+    height: 120
+  },
   onePointFlex: {
     flex: 1
   },

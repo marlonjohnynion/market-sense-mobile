@@ -24,8 +24,7 @@ const RightHiddenRowComponent = ({ data, actions }) => (
 
 const SalesList = (props) => {
   const { sales, actions } = props
-  return <DataList data={sales} actions={actions} RowComponent={ListItem}
-                   RightHiddenRowComponent={RightHiddenRowComponent}/>
+  return <DataList data={sales} actions={actions} RowComponent={ListItem} RightHiddenRowComponent={RightHiddenRowComponent}/>
 }
 
 const mapStateToProps = state => {

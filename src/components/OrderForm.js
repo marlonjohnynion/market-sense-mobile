@@ -1,8 +1,8 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
-import { Container, Form, Item, Label, Header, Input, Icon, Button } from 'native-base'
+import { Container, Form, Item, Label, Input, Button } from 'native-base'
 import { SafeAreaView } from 'react-navigation'
-import { Image, Text, View } from 'react-native'
+import { Image, Text, View, StyleSheet } from 'react-native'
 import DatePicker from './DatePicker'
 import OrderSummary from './OrderSummary'
 
@@ -27,19 +27,19 @@ const OrderForm = (props) => {
   return (
     <View>
       <SafeAreaView>
-        <Image source={require('../assets/images/market-colors.jpg')} style={{height: 100}}/>
+        <Image source={require('../assets/images/market-colors.jpg')} style={styles.image}/>
         <Container>
-          <Form style={{marginTop: 15}}>
-            <Text style={{fontSize: 24, marginTop: 15, marginLeft: 15, marginBottom: 10}}>Order Information</Text>
+          <Form style={styles.form}>
+            <Text style={styles.orderInformationLabel}>Order Information</Text>
             <Item fixedLabel>
-              <Label style={{ fontSize: 18 }}>Delivery Date</Label>
+              <Label style={styles.deliveryDateLabel}>Delivery Date</Label>
               <Field name='deliveryDate' component={DeliveryDatePicker} date={!deliveryDate ? product.minDeliveryDate : deliveryDate} minDate={product.minDeliveryDate} maxDate={product.maxDeliveryDate}/>
             </Item>
             <Item inlineLabel>
-              <Label style={{ fontSize: 18 }}>Quantity</Label>
+              <Label style={styles.quantityLabel}>Quantity</Label>
               <Field name='quantity' component={QuantityField} defaultValue={initialValues.quantity}/>
             </Item>
-            <Text style={{fontSize: 24, marginTop: 15, marginLeft: 15, marginBottom: 10}}>Delivery Information</Text>
+            <Text style={styles.deliveryInformationLabel}>Delivery Information</Text>
             <Item>
               <Field name='deliveryAddressLine1' component={GenericField} placeholder='Address Line 1'/>
             </Item>
@@ -55,16 +55,28 @@ const OrderForm = (props) => {
             <Item>
               <Field name='contact' component={GenericField} placeholder='Contact Number'/>
             </Item>
-            <Text style={{fontSize: 24, marginTop: 15, marginLeft: 15, marginBottom: 10}}>Order Summary</Text>
+            <Text style={styles.orderSummaryLabel}>Order Summary</Text>
           </Form>
           <OrderSummary product={product} orderData={props.orderData}/>
-          <Button full large success style={{margin: 15, borderRadius: 4}} onPress={handleSubmit(submissionHandler)}>
-            <Text style={{color: '#fff', fontSize: 20, fontWeight: 'bold'}}>COMPLETE ORDER</Text>
+          <Button full large success style={styles.completeOrderButton} onPress={handleSubmit(submissionHandler)}>
+            <Text style={styles.completeOrderButtonText}>COMPLETE ORDER</Text>
           </Button>
         </Container>
       </SafeAreaView>
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  orderInformationLabel: {fontSize: 24, marginTop: 15, marginLeft: 15, marginBottom: 10},
+  deliveryDateLabel: { fontSize: 18 },
+  quantityLabel: { fontSize: 18 },
+  deliveryInformationLabel: {fontSize: 24, marginTop: 15, marginLeft: 15, marginBottom: 10},
+  orderSummaryLabel: {fontSize: 24, marginTop: 15, marginLeft: 15, marginBottom: 10},
+  completeOrderButtonText: {color: '#fff', fontSize: 20, fontWeight: 'bold'},
+  completeOrderButton: {margin: 15, borderRadius: 4},
+  image: {height: 100},
+  form: {marginTop: 15}
+})
 
 export default reduxForm({ form: 'orderForm' })(OrderForm)

@@ -1,8 +1,5 @@
 import React from 'react'
-import {
-  Container,
-  Content
-} from 'native-base'
+import { Container } from 'native-base'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as userActions from '../actions/userActions'

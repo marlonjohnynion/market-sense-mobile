@@ -1,6 +1,5 @@
 import React from 'react'
 import { addNavigationHelpers, StackNavigator, SwitchNavigator, DrawerNavigator, TabNavigator } from 'react-navigation'
-import { View } from 'react-native'
 import { Icon } from 'native-base'
 import { createReduxBoundAddListener } from 'react-navigation-redux-helpers'
 import { connect } from 'react-redux'

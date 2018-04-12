@@ -65,12 +65,12 @@ const ProductForm = props => {
             <Item stackedLabel style={styles.datePicker}>
               <Label>Availability</Label>
               <Field name='minDeliveryDate' component={DeliveryDatePicker}
-                     date={!minDeliveryDate ? initialValues.minDeliveryDate : minDeliveryDate} minDate={getDateInWords(new Date())}/>
+                date={!minDeliveryDate ? initialValues.minDeliveryDate : minDeliveryDate} minDate={getDateInWords(new Date())}/>
             </Item>
             <Item stackedLabel>
               <Label>Expiry </Label>
               <Field name='maxDeliveryDate' date={!maxDeliveryDate ? initialValues.maxDeliveryDate : maxDeliveryDate}
-                     component={DeliveryDatePicker} minDate={minDeliveryDate}/>
+                component={DeliveryDatePicker} minDate={minDeliveryDate}/>
             </Item>
             <Button block success style={styles.button} onPress={handleSubmit(actions.submitAction)}>
               <Text style={styles.buttonText}>Submit Product</Text>
