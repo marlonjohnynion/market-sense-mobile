@@ -19,19 +19,31 @@ export const registerFail = (error) => ({
   error: error
 })
 
+export const validateUserRegistration = values => {
+  const { email, password, emailRepeat, firstName, lastName, passwordRepeat } = values
+  if (!email || !password || !firstName || !lastName || !emailRepeat || !passwordRepeat) {
+    throw new Error('Please fill up all the fields!')
+  }
+  if (password !== passwordRepeat) {
+    throw new Error('Passwords do not match!')
+  }
+  if (email !== emailRepeat) {
+    throw new Error('Emails do not match!')
+  }
+}
+
+export const validateUserLogin = values => {
+  const {email, password} = values
+  if (!email || !password) {
+    throw new Error('Please fill up email and password!')
+  }
+}
+
 export const registerUser = values => {
   return async (dispatch) => {
-    const { email, password, emailRepeat, firstName, lastName, passwordRepeat } = values
     try {
-      if (!email || !password || !firstName || !lastName || !emailRepeat || !passwordRepeat) {
-        throw new Error('Please fill up all the fields!')
-      }
-      if (password !== passwordRepeat) {
-        throw new Error('Passwords do not match!')
-      }
-      if (email !== emailRepeat) {
-        throw new Error('Emails do not match!')
-      }
+      validateUserRegistration(values)
+      const { email, password, firstName, lastName } = values
       await firebase
         .auth()
         .createUserWithEmailAndPassword(email, password)

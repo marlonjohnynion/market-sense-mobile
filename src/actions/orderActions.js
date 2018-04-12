@@ -1,31 +1,45 @@
 import firebase from '../common/firebase'
-import { generateInvoiceNumber } from '../common/helpers'
+import { generateInvoiceNumber, isNumber, toast } from '../common/helpers'
 import { ActionSheet } from 'native-base'
+
+export const validateOrder = values => {
+  const { deliveryDate, quantity, deliveryAddressLine1, deliveryAddressLine2, city, province, contact } = values
+  if (!deliveryDate || !quantity || !deliveryAddressLine1 || !deliveryAddressLine2 || !city || !province || !contact) {
+    throw new Error('Please fill up all fields!')
+  }
+  if (!isNumber(quantity) || (isNumber(quantity) && parseInt(quantity) <= 0)) {
+    throw new Error('Quantity must be a valid number!')
+  }
+  if (!isNumber(contact)) {
+    throw new Error('Contact number must be a number!')
+  }
+}
 
 export const addOrder = (order) => {
   return async (dispatch, getState) => {
-    const { selectedProduct } = getState().products
-    const parsedProductData = {
-      key: selectedProduct.key,
-      productPrice: parseFloat(selectedProduct.productPrice),
-      lotSize: parseFloat(selectedProduct.lotSize)
-    }
-    const payload = {
-      ...order,
-      sellerKey: selectedProduct.ownerKey,
-      invoiceNumber: generateInvoiceNumber(),
-      quantity: parseInt(order.quantity),
-      status: 'Pending',
-      userKey: getState().user.uid,
-      product: {
-        ...parsedProductData
-      }
-    }
     try {
+      validateOrder(order)
+      const { selectedProduct } = getState().products
+      const parsedProductData = {
+        key: selectedProduct.key,
+        productPrice: parseFloat(selectedProduct.productPrice),
+        lotSize: parseFloat(selectedProduct.lotSize)
+      }
+      const payload = {
+        ...order,
+        sellerKey: selectedProduct.ownerKey,
+        invoiceNumber: generateInvoiceNumber(),
+        quantity: parseInt(order.quantity),
+        status: 'Pending',
+        userKey: getState().user.uid,
+        product: {
+          ...parsedProductData
+        }
+      }
       await firebase.database().ref('/orders').push(payload)
       dispatch({ type: 'ADD_ORDER_NAV' })
     } catch (e) {
-      throw new Error(e)
+      toast(e)
     }
   }
 }
