@@ -17,23 +17,16 @@ describe('Reducers Test: Product', () => {
     ]
   })
 
-  it('+++ reducer for showing products', () => {
-    let state = {}
-    state = productReducers(state, { type: 'SHOW_PRODUCTS', products: productsList })
-    const expected = { productsList: [...productsList] }
-    expect(state).toEqual(expected)
-  })
-
   it('+++ reducer for adding products', () => {
     const product = {
       id: 3,
       productTitle: 'Cabbage',
       productDescription: 'Free cabbage from the yard.'
     }
-    let state = { products: [...productsList] }
+    let state = { productsList: [...productsList], userProductsList: [] }
     state = productReducers(state, { type: 'ADD_PRODUCT', product: product })
-    const expected = { products: [...productsList] }
-    expected.products.push(product)
+    const expected = { productsList: [...productsList], userProductsList: [] }
+    expected.productsList.push(product)
     expect(state).toEqual(expected)
   })
 
