@@ -1,4 +1,4 @@
-const app = (state = {}, action) => {
+const app = (state = {loading: false}, action) => {
   switch (action.type) {
     case 'LOADING_STARTED':
       return { ...state, loading: true }

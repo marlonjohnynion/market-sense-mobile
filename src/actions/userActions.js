@@ -46,8 +46,8 @@ export const validateUserLogin = values => {
 export const registerUser = values => {
   return async (dispatch, getState) => {
     try {
+      dispatch({ type: 'LOADING_STARTED' })
       values.ownerAvatar = await getFirebaseImageUrl(getState().image.chosenImage)
-      dispatch({ type: 'CLEAR_TAKEN_IMAGE' })
       validateUserRegistration(values)
       const { email, password, firstName, lastName, ownerAvatar } = values
       await firebase
@@ -59,9 +59,11 @@ export const registerUser = values => {
           lastName: lastName,
           ownerAvatar: ownerAvatar
         })
+        dispatch({ type: 'LOADING_FINISHED' })
         toast(`You're registered. Please login!`)
       }
     } catch (e) {
+      dispatch({ type: 'LOADING_FINISHED' })
       toast(e.toString())
     }
   }
@@ -69,8 +71,10 @@ export const registerUser = values => {
 
 export const authenticateUser = (values) => {
   return async (dispatch, getState) => {
-    const { email, password } = values
     try {
+      const { email, password } = values
+      validateUserLogin(values)
+      dispatch({ type: 'LOADING_STARTED' })
       await firebase
         .auth()
         .signInAndRetrieveDataWithEmailAndPassword(email, password)
@@ -78,8 +82,10 @@ export const authenticateUser = (values) => {
         values.uid = firebase.auth().currentUser.uid
         dispatch(loginSuccess(values))
         initializeListeners(dispatch, getState())
+        dispatch({ type: 'LOADING_FINISHED' })
       }
     } catch (e) {
+      dispatch({ type: 'LOADING_FINISHED' })
       toast('Wrong password/email combination')
     }
   }
