@@ -44,7 +44,7 @@ export const RegisterForm = (props) => {
         <Form style={styles.form}>
           <Text style={styles.mainHeading}>Register</Text>
           <Text style={styles.subHeading}>Fill up the form to complete registration.</Text>
-          <Button style={styles.button} onPress={handleSubmit(actions.chooseImageOrigin)} block danger>
+          <Button style={styles.button} onPress={actions.chooseImageOrigin} block danger>
             <Text style={styles.buttonText}>Choose Avatar</Text>
           </Button>
           <GeneratedGenericFields fields={registrationFields }/>
