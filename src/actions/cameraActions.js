@@ -27,6 +27,9 @@ export const takeImage = () => {
 
 export const getFirebaseImageUrl = async (pickedImage) => {
   try {
+    if (!pickedImage) {
+      throw new Error('Please pick an image!')
+    }
     const imageUri = pickedImage.uri
     const imageTitle = imageUri.split('/').pop()
     const image = await fetch(imageUri)

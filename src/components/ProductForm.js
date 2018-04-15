@@ -56,6 +56,9 @@ const ProductForm = props => {
         <Image source={productImage} style={styles.image}/>
         <Content>
           <Form style={styles.form}>
+            <Button block success style={styles.button} onPress={actions.chooseImageOrigin}>
+              <Text style={styles.buttonText}>Choose Product Image</Text>
+            </Button>
             <Text style={styles.mainHeading}>Product Information</Text>
             <GeneratedGenericFields fields={productInformationFields} initialValues={initialValues} />
             <Text style={styles.mainHeading}>Inventory Information</Text>

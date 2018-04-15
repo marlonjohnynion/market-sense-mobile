@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import EditProductForm from '../components/ProductForm'
 import { formValueSelector } from 'redux-form'
+import { chooseImageOrigin } from '../actions/cameraActions'
 import { updateProduct } from '../actions/productActions'
 
 const NewProduct = props => {
@@ -18,7 +19,7 @@ const NewProduct = props => {
 const selector = formValueSelector('productForm')
 
 const mapDispatchToProps = (dispatch) => ({
-  actions: bindActionCreators({ submitAction: updateProduct }, dispatch)
+  actions: bindActionCreators({ submitAction: updateProduct, chooseImageOrigin }, dispatch)
 })
 
 const mapStateToProps = state => ({
