@@ -1,6 +1,6 @@
 import React from 'react'
-import { Text, StyleSheet } from 'native-base'
-import { View } from 'react-native'
+import { Text } from 'native-base'
+import { View, StyleSheet } from 'react-native'
 
 export const OrderConfirmationContainer = (props) => {
   let { productPrice, lotSize, productTitle } = props.product
