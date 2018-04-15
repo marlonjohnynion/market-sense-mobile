@@ -56,3 +56,7 @@ export function toastGenericErrorMsg () {
 export function isNumber (testCase) {
   return !isNaN(testCase)
 }
+
+export function getFullName (firstName, lastName) {
+  return firstName + ' ' + lastName
+}

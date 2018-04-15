@@ -54,7 +54,10 @@ export const registerUser = values => {
         .auth()
         .createUserWithEmailAndPassword(email, password)
       if (firebase.auth().currentUser) {
-        await firebase.database().ref('/users').push({
+        const newUserId = String(firebase.auth().currentUser.uid)
+        console.log(newUserId)
+        const userRef = await firebase.database().ref('/users').child(newUserId)
+        await userRef.set({
           firstName: firstName,
           lastName: lastName,
           ownerAvatar: ownerAvatar
@@ -64,6 +67,7 @@ export const registerUser = values => {
       }
     } catch (e) {
       dispatch({ type: 'LOADING_FINISHED' })
+      console.log(e)
       toast(e.toString())
     }
   }
