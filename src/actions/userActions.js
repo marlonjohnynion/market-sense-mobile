@@ -2,6 +2,7 @@ import * as actions from './types/userActionTypes'
 import firebase from '../common/firebase'
 import { toast } from '../common/helpers'
 import { initializeListeners } from './listeners'
+import { getFirebaseImageUrl } from './cameraActions'
 
 export const loginSuccess = (values) => ({
   type: actions.LOGIN,
@@ -20,7 +21,7 @@ export const registerFail = (error) => ({
 })
 
 export const validateUserRegistration = values => {
-  const { email, password, emailRepeat, firstName, lastName, passwordRepeat } = values
+  const { email, password, emailRepeat, firstName, lastName, passwordRepeat, ownerAvatar } = values
   if (!email || !password || !firstName || !lastName || !emailRepeat || !passwordRepeat) {
     throw new Error('Please fill up all the fields!')
   }
@@ -29,6 +30,9 @@ export const validateUserRegistration = values => {
   }
   if (email !== emailRepeat) {
     throw new Error('Emails do not match!')
+  }
+  if (!ownerAvatar) {
+    throw new Error('Please select your profile image!')
   }
 }
 
@@ -40,18 +44,19 @@ export const validateUserLogin = values => {
 }
 
 export const registerUser = values => {
-  return async (dispatch) => {
+  return async (dispatch, getState) => {
     try {
+      values.ownerAvatar = await getFirebaseImageUrl(getState().image.chosenImage)
       validateUserRegistration(values)
-      const { email, password, firstName, lastName } = values
+      const { email, password, firstName, lastName, ownerAvatar } = values
       await firebase
         .auth()
         .createUserWithEmailAndPassword(email, password)
       if (firebase.auth().currentUser) {
-        await firebase.database().ref('/users').set({
+        await firebase.database().ref('/users').push({
           firstName: firstName,
           lastName: lastName,
-          ownerAvatar: 'https://pixel.nymag.com/imgs/daily/selectall/2018/03/05/05-patrick.w710.h473.jpg'
+          ownerAvatar: ownerAvatar
         })
         toast(`You're registered. Please login!`)
       }

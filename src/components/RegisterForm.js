@@ -40,9 +40,13 @@ export const RegisterForm = (props) => {
       <Image source={require('../assets/images/keyboard.jpeg')} style={styles.image}
         resizeMethod={'scale'}/>
       <ScrollView style={styles.scrollView}>
+
         <Form style={styles.form}>
           <Text style={styles.mainHeading}>Register</Text>
           <Text style={styles.subHeading}>Fill up the form to complete registration.</Text>
+          <Button style={styles.button} onPress={handleSubmit(actions.chooseImageOrigin)} block danger>
+            <Text style={styles.buttonText}>Choose Avatar</Text>
+          </Button>
           <GeneratedGenericFields fields={registrationFields }/>
           <Item stackedLabel>
             <Label>Password</Label>
@@ -53,6 +57,9 @@ export const RegisterForm = (props) => {
             <Field name='passwordRepeat' component={passwordField}/>
           </Item>
         </Form>
+
+
+
         <Button style={styles.button} onPress={handleSubmit(actions.registerUser)} block success>
           <Text style={styles.buttonText}>Register</Text>
         </Button>
