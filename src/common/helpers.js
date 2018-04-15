@@ -26,14 +26,15 @@ export function generateInvoiceNumber () {
 }
 
 export function roundToTwoFixedDecimalPlaces (number) {
-  return parseFloat(number).toFixed(2)
+  return parseFloat(parseFloat(number).toFixed(2))
 }
 
 export function getFullAddress (...args) {
   let address = ''
   args.forEach(arg => {
-    address += arg + ' '
+    address += arg + ', '
   })
+  address = address.substring(0, address.length - 2)
   return address
 }
 
