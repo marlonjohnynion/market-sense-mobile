@@ -37,7 +37,7 @@ export const validateUserRegistration = values => {
 }
 
 export const validateUserLogin = values => {
-  const {email, password} = values
+  const { email, password } = values
   if (!email || !password) {
     throw new Error('Please fill up email and password!')
   }
@@ -47,6 +47,7 @@ export const registerUser = values => {
   return async (dispatch, getState) => {
     try {
       values.ownerAvatar = await getFirebaseImageUrl(getState().image.chosenImage)
+      dispatch({ type: 'CLEAR_TAKEN_IMAGE' })
       validateUserRegistration(values)
       const { email, password, firstName, lastName, ownerAvatar } = values
       await firebase
