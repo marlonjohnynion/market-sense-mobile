@@ -15,22 +15,23 @@ export const Picker = (props) => {
       format="ll"
       confirmBtnText="Confirm"
       cancelBtnText="Cancel"
-      customStyles={styles.picker}
+      customStyles={pickerCustomStyle}
       onDateChange={onDateChange}
     />
   )
 }
 
-const styles = StyleSheet.create({
-  picker: {
-    dateIcon: {
-      width: 0,
-      height: 0
-    },
-    dateInput: {
-      borderWidth: 0
-    }
+const pickerCustomStyle = {
+  dateIcon: {
+    width: 0,
+    height: 0
   },
+  dateInput: {
+    borderWidth: 0
+  }
+}
+
+const styles = StyleSheet.create({
   container: {position: 'relative'}
 })
 
