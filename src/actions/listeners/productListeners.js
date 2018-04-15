@@ -1,4 +1,5 @@
 import firebase from '../../common/firebase'
+import { getFullName } from '../../common/helpers'
 
 export const realtimeProductListeners = (dispatch, state) => {
   const userId = state.user.uid
@@ -45,8 +46,8 @@ export const getProductWithUserData = async (dispatch, data) => {
   product.key = data.key
   let user = firebase.database().ref('/users')
   user = await user.orderByKey().equalTo(product.ownerKey).once('value')
-  console.log(user)
-  product.productOwner = user.name
-  product.ownerAvatar = user.avatar
+  user = user.child(product.ownerKey).val()
+  product.productOwner = getFullName(user.firstName, user.lastName)
+  product.ownerAvatar = user.ownerAvatar
   return product
 }
