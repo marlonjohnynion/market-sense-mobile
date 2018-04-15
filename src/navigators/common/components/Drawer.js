@@ -6,7 +6,7 @@ export const Drawer = props => (
   <ScrollView>
     <SafeAreaView style={styles.container} forceInset={{ top: 'always', horizontal: 'never' }}>
       <Image
-        source={require('../assets/images/food-wood-tomatoes.jpg')}
+        source={require('../../../assets/images/food-wood-tomatoes.jpg')}
         style={styles.image}/>
       <DrawerItems {...props}/>
     </SafeAreaView>

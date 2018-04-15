@@ -1,5 +1,5 @@
 import { NavigationActions } from 'react-navigation'
-import { AppNavigator } from '../containers/AppNavigator'
+import { AppNavigator } from '../navigators/AppNavigator'
 import { getCurrentRoute } from '../common/helpers'
 
 const router = AppNavigator.router
