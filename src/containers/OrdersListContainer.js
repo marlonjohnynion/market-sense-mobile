@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { viewOrderReceipt } from '../actions/orderActions'
+import { viewOrderReceipt } from '../actions/creators/order'
 import DataList from '../components/DataList'
 import OrdersListItem from '../components/OrdersListItem'
 

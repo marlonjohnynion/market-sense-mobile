@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Button, Icon } from 'native-base'
 import DataList from '../components/DataList'
-import { editProduct, deleteProduct } from '../actions/productActions'
+import { deleteProduct } from '../actions/productActions'
+import { editProduct } from '../actions/creators/product'
 import MyProductsListItem from '../components/MyProductsListItem'
 
 const ListItem = ({ data, actions }) => {
