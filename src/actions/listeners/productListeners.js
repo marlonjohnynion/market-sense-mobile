@@ -6,23 +6,25 @@ export const realtimeProductListeners = (dispatch, state) => {
   const productsRef = firebase.database().ref('/products')
   const userProductsRef = firebase.database().ref('/products')
     .orderByChild('ownerKey').equalTo(userId)
-  productsRef.on('child_added', addProductFromListener(dispatch))
+  productsRef.on('child_added', addProductFromListener(dispatch, userId))
   productsRef.on('child_changed', updateProductFromListener(dispatch))
   productsRef.on('child_removed', deleteProductFromListener(dispatch))
   userProductsRef.on('child_added', addUserProductFromListener(dispatch))
 }
 
-export const addUserProductFromListener = (dispatch) => {
+export const addUserProductFromListener = (dispatch, userId) => {
   return async (data) => {
     const product = await getProductWithUserData(dispatch, data)
     dispatch({ type: 'ADD_USER_PRODUCT', product: product })
   }
 }
 
-export const addProductFromListener = (dispatch) => {
+export const addProductFromListener = (dispatch, userId) => {
   return async (data) => {
     const product = await getProductWithUserData(dispatch, data)
-    dispatch({ type: 'ADD_PRODUCT', product: product })
+    if (product.ownerKey !== userId) {
+      dispatch({ type: 'ADD_PRODUCT', product: product })
+    }
   }
 }
 

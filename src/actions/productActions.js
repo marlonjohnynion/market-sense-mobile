@@ -1,6 +1,7 @@
 import firebase from '../common/firebase'
 import { toast, toastGenericErrorMsg, isNumber } from '../common/helpers'
 import { getFirebaseImageUrl } from './cameraActions'
+import Fuse from 'fuse.js'
 
 export const initiateProductAdd = () => ({
   type: 'INITIATE_PRODUCT_ADD'
@@ -86,8 +87,14 @@ export const updateProduct = (product) => {
   }
 }
 
+export const searchTermChange = (value) => {
+  return (dispatch) => {
+    dispatch({ type: 'SEARCH_TERM_CHANGE', searchTerm: value })
+  }
+}
+
 export const deleteProduct = (product) => {
-  return async (dispatch) => {
+  return async () => {
     try {
       const productRef = await firebase.database().ref('/products')
       await productRef.child(product.key).remove()
@@ -100,6 +107,12 @@ export const deleteProduct = (product) => {
 export const checkProductAvailability = () => {
   return async (dispatch) => {
     dispatch({ type: 'VIEW_PRODUCT_AVAILABILITY' })
+  }
+}
+
+export const filterProducts = () => {
+  return (dispatch, getState) => {
+    dispatch({ type: 'FILTER_PRODUCTS', searchTerm: getState().products.searchTerm })
   }
 }
 

@@ -1,9 +1,21 @@
-import { insertItemToArray } from '../common/helpers'
+import { fuzzySearch, insertItemToArray } from '../common/helpers'
 
 const product = (state = { productsList: [], userProductsList: [] }, action) => {
   let products
   let productsList
   switch (action.type) {
+    case 'SEARCH_TERM_CHANGE':
+      return { ...state, searchTerm: action.searchTerm }
+    case 'FILTER_PRODUCTS':
+      const originalProductsList = [...state.productsList]
+      const searched = fuzzySearch(action.searchTerm, originalProductsList, [
+        'productTitle',
+        'productDescription',
+        'productCategory',
+        'productLocation',
+        'productPrice'
+      ])
+      return { ...state, filteredProducts: searched }
     case 'SELECT_PRODUCT':
       return { ...state, selectedProduct: action.selectedProduct }
     case 'ADD_PRODUCT':
@@ -13,9 +25,15 @@ const product = (state = { productsList: [], userProductsList: [] }, action) => 
     case 'EDIT_PRODUCT':
       return { ...state, editedProduct: action.product }
     case 'UPDATE_PRODUCT':
-      productsList = state.productsList.map(product => product.key !== action.product.key ? product : {...action.product})
-      products = state.userProductsList.map(product => product.key !== action.product.key ? product : {...action.product})
-      return { ...state, productsList: productsList, userProductsList: products, editedProduct: action.product, selectedProduct: action.product }
+      productsList = state.productsList.map(product => product.key !== action.product.key ? product : { ...action.product })
+      products = state.userProductsList.map(product => product.key !== action.product.key ? product : { ...action.product })
+      return {
+        ...state,
+        productsList: productsList,
+        userProductsList: products,
+        editedProduct: action.product,
+        selectedProduct: action.product
+      }
     case 'DELETE_PRODUCT':
       const filteredProducts = [...state.productsList].filter(product => product.key !== action.product.key)
       return { ...state, productsList: filteredProducts }

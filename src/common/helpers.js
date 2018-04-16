@@ -1,4 +1,5 @@
 import { Toast } from 'native-base'
+import Fuse from 'fuse.js'
 
 export function insertItemToArray (array, item) {
   let newArray = array.slice()
@@ -60,4 +61,18 @@ export function isNumber (testCase) {
 
 export function getFullName (firstName, lastName) {
   return firstName + ' ' + lastName
+}
+
+export const fuzzySearch = (searchTerm, items, fields) => {
+  const options = {
+    shouldSort: true,
+    threshold: 0.5,
+    location: 0,
+    distance: 5,
+    maxPatternLength: 32,
+    minMatchCharLength: 4,
+    keys: fields
+  }
+  const searchResults = new Fuse(items, options).search(searchTerm)
+  return searchResults
 }
