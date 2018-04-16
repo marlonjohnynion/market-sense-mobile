@@ -31,12 +31,15 @@ const order = (state = initialState, action) => {
         }
         return { ...action.order }
       })
-      const currentOrder = state.currentOrder.key === action.order.key ? {...action.order} : {...state.currentOrder}
+      let conditional = {}
+      if (state.currentOrder) {
+        conditional.currentOrder = state.currentOrder.key === action.order.key ? {...action.order} : {...state.currentOrder}
+      }
       return {
         ...state,
         ordersList: ordersList,
         ordersMadeToUser: ordersMadeToUser,
-        currentOrder: currentOrder
+        ...conditional
       }
     case 'ADD_ORDER_MADE_TO_USER':
       return {
