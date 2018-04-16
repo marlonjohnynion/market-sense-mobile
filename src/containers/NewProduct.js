@@ -9,11 +9,7 @@ import { chooseImageOrigin } from '../actions/cameraActions'
 
 const NewProduct = props => {
   const { actions, formValues, initialValues } = props
-  return (
-    <View>
-      <NewProductForm actions={actions} formValues={formValues} initialValues={initialValues}/>
-    </View>
-  )
+  return <NewProductForm actions={actions} formValues={formValues} initialValues={initialValues}/>
 }
 
 const selector = formValueSelector('productForm')

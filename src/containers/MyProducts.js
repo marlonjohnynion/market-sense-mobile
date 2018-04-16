@@ -7,9 +7,7 @@ import { editProduct, deleteProduct } from '../actions/productActions'
 import MyProductsListItem from '../components/MyProductsListItem'
 
 const ListItem = ({ data, actions }) => {
-  return (
-    <MyProductsListItem key={data.key} product={data} actions={actions}/>
-  )
+  return <MyProductsListItem key={data.key} product={data} actions={actions}/>
 }
 
 const RightHiddenRowComponent = ({ data, actions }) => (

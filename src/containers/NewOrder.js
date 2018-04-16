@@ -10,13 +10,7 @@ import OrderForm from '../components/OrderForm'
 import { addOrder } from '../actions/orderActions'
 
 export const NewOrder = ({ state, orderData, actions, selectedProduct, initialValues }) => {
-  return (
-    <Container>
-      <Content>
-        <OrderForm initialValues={initialValues} orderData={orderData} submissionHandler={actions.addOrder} product={selectedProduct}/>
-      </Content>
-    </Container>
-  )
+  return <OrderForm initialValues={initialValues} orderData={orderData} submissionHandler={actions.addOrder} product={selectedProduct}/>
 }
 
 const selector = formValueSelector('orderForm')

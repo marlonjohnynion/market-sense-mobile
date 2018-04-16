@@ -7,9 +7,7 @@ import DataList from '../components/DataList'
 import OrdersListItem from '../components/OrdersListItem'
 
 const ListItem = ({ data, actions }) => {
-  return (
-    <OrdersListItem key={data.invoiceNumber} order={data} onPress={actions.viewSaleReceipt}/>
-  )
+  return <OrdersListItem key={data.invoiceNumber} order={data} onPress={actions.viewSaleReceipt}/>
 }
 
 const RightHiddenRowComponent = ({ data, actions }) => (
