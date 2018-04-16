@@ -38,9 +38,6 @@ ShallowWrapper {
       },
       "userActions": Object {
         "authenticateUser": [Function],
-        "loginFail": [Function],
-        "loginSuccess": [Function],
-        "registerFail": [Function],
         "registerUser": [Function],
         "validateUserLogin": [Function],
         "validateUserRegistration": [Function],
@@ -66,9 +63,6 @@ ShallowWrapper {
         },
         "userActions": Object {
           "authenticateUser": [Function],
-          "loginFail": [Function],
-          "loginSuccess": [Function],
-          "registerFail": [Function],
           "registerUser": [Function],
           "validateUserLogin": [Function],
           "validateUserRegistration": [Function],

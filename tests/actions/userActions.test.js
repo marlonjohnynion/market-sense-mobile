@@ -1,5 +1,5 @@
 import * as actions from '../../src/actions/types/userActionTypes'
-import * as userActions from '../../src/actions/userActions'
+import * as userActions from '../../src/actions/creators/user'
 
 describe('Actions Test: User Actions', () => {
   it('+++ ACTION CREATOR -> logins user', () => {

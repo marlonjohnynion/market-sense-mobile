@@ -28,12 +28,14 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "function",
     "props": Object {
-      "filterProducts": [Function],
+      "actions": Object {
+        "filterProducts": [Function],
+        "searchTermChange": [Function],
+        "selectProduct": [Function],
+      },
       "filteredProducts": undefined,
       "products": undefined,
       "searchTerm": undefined,
-      "searchTermChange": [Function],
-      "selectProduct": [Function],
       "store": Object {
         "clearActions": [Function],
         "dispatch": [Function],
@@ -72,12 +74,14 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "function",
       "props": Object {
-        "filterProducts": [Function],
+        "actions": Object {
+          "filterProducts": [Function],
+          "searchTermChange": [Function],
+          "selectProduct": [Function],
+        },
         "filteredProducts": undefined,
         "products": undefined,
         "searchTerm": undefined,
-        "searchTermChange": [Function],
-        "selectProduct": [Function],
         "store": Object {
           "clearActions": [Function],
           "dispatch": [Function],
