@@ -1,9 +1,5 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
-import {
-  Container,
-  Content
-} from 'native-base'
 import { connect } from 'react-redux'
 import { formValueSelector } from 'redux-form'
 import OrderForm from '../components/OrderForm'

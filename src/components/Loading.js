@@ -1,6 +1,5 @@
 import React from 'react'
 import { Image, View, StyleSheet } from 'react-native'
-import { Constants } from 'expo'
 
 export const Loading = () => (
   <View style={styles.container}>

@@ -1,7 +1,8 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { selectProduct, searchTermChange, filterProducts } from '../actions/productActions'
+import { searchTermChange, filterProducts } from '../actions/productActions'
+import { selectProduct } from '../actions/creators/product'
 import ProductsList from '../components/ProductsList'
 
 export const ProductListView = ({ products, searchTerm, filteredProducts, actions }) => {

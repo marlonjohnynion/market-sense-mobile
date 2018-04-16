@@ -57,9 +57,6 @@ export const RegisterForm = (props) => {
             <Field name='passwordRepeat' component={passwordField}/>
           </Item>
         </Form>
-
-
-
         <Button style={styles.button} onPress={handleSubmit(actions.registerUser)} block success>
           <Text style={styles.buttonText}>Register</Text>
         </Button>
