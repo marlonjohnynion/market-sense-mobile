@@ -1,6 +1,6 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
-import { Container, Form, Item, Label, Input, Button } from 'native-base'
+import { Content, Form, Item, Label, Input, Button } from 'native-base'
 import { SafeAreaView } from 'react-navigation'
 import { Image, Text, View, StyleSheet } from 'react-native'
 import DatePicker from './DatePicker'
@@ -25,10 +25,10 @@ const OrderForm = (props) => {
   const { deliveryDate } = props.orderData
   const { handleSubmit, submissionHandler, product, initialValues } = props
   return (
-    <View>
+    <Content>
       <SafeAreaView>
         <Image source={require('../assets/images/market-colors.jpg')} style={styles.image}/>
-        <Container>
+        <View>
           <Form style={styles.form}>
             <Text style={styles.orderInformationLabel}>Order Information</Text>
             <Item fixedLabel>
@@ -61,9 +61,9 @@ const OrderForm = (props) => {
           <Button full large success style={styles.completeOrderButton} onPress={handleSubmit(submissionHandler)}>
             <Text style={styles.completeOrderButtonText}>COMPLETE ORDER</Text>
           </Button>
-        </Container>
+        </View>
       </SafeAreaView>
-    </View>
+    </Content>
   )
 }
 
