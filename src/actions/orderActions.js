@@ -1,6 +1,7 @@
 import firebase from '../common/firebase'
 import { generateInvoiceNumber, isNumber, toast } from '../common/helpers'
 import { ActionSheet } from 'native-base'
+import { addOrderThenNavigate } from './creators/order'
 
 export const validateOrder = values => {
   const { deliveryDate, quantity, deliveryAddressLine1, deliveryAddressLine2, city, province, contact } = values
@@ -37,22 +38,12 @@ export const addOrder = (order) => {
         }
       }
       await firebase.database().ref('/orders').push(payload)
-      dispatch({ type: 'ADD_ORDER_NAV' })
+      dispatch(addOrderThenNavigate())
     } catch (e) {
       toast(e)
     }
   }
 }
-
-export const viewOrderReceipt = (order) => ({
-  type: 'VIEW_ORDER_RECEIPT',
-  order: order
-})
-
-export const viewSaleReceipt = (order) => ({
-  type: 'VIEW_SALE_RECEIPT',
-  order: order
-})
 
 export const updateOrderStatus = (order) => {
   return async (dispatch) => {

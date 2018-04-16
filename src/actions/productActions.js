@@ -1,11 +1,13 @@
 import firebase from '../common/firebase'
 import { toast, toastGenericErrorMsg, isNumber } from '../common/helpers'
 import { getFirebaseImageUrl } from './cameraActions'
-import Fuse from 'fuse.js'
-
-export const initiateProductAdd = () => ({
-  type: 'INITIATE_PRODUCT_ADD'
-})
+import { startLoading, endLoading } from './creators/app'
+import { clearTakenImage } from './creators/image'
+import {
+  changeSearchTerm,
+  productFilter,
+  viewProductAvailability
+} from './creators/product'
 
 const validateProductBeforeSubmission = (product) => {
   const {
@@ -44,6 +46,7 @@ const validateProductBeforeSubmission = (product) => {
 export const addProduct = (product) => {
   return async (dispatch, getState) => {
     try {
+      dispatch(startLoading())
       product.productImageUri = await getFirebaseImageUrl(getState().image.chosenImage)
       validateProductBeforeSubmission(product)
       const payload = {
@@ -51,17 +54,12 @@ export const addProduct = (product) => {
         ...product
       }
       await firebase.database().ref('/products').push(payload)
-      dispatch({ type: 'CLEAR_TAKEN_IMAGE' })
+      dispatch(clearTakenImage())
+      dispatch(endLoading())
       toast('Product has been listed!')
     } catch (e) {
       toast(e)
     }
-  }
-}
-
-export const editProduct = (product) => {
-  return async (dispatch) => {
-    dispatch({ type: 'EDIT_PRODUCT', product: product })
   }
 }
 
@@ -79,7 +77,7 @@ export const updateProduct = (product) => {
       delete payload.ownerAvatar
       const productRef = await firebase.database().ref('/products')
       await productRef.child(product.key).update(payload)
-      dispatch({ type: 'CLEAR_TAKEN_IMAGE' })
+      dispatch(clearTakenImage())
       toast('Product has been updated!')
     } catch (e) {
       toast(e)
@@ -89,7 +87,7 @@ export const updateProduct = (product) => {
 
 export const searchTermChange = (value) => {
   return (dispatch) => {
-    dispatch({ type: 'SEARCH_TERM_CHANGE', searchTerm: value })
+    dispatch(changeSearchTerm(value))
   }
 }
 
@@ -106,17 +104,12 @@ export const deleteProduct = (product) => {
 
 export const checkProductAvailability = () => {
   return async (dispatch) => {
-    dispatch({ type: 'VIEW_PRODUCT_AVAILABILITY' })
+    dispatch(viewProductAvailability())
   }
 }
 
 export const filterProducts = () => {
   return (dispatch, getState) => {
-    dispatch({ type: 'FILTER_PRODUCTS', searchTerm: getState().products.searchTerm })
+    dispatch(productFilter(getState().products.searchTerm))
   }
 }
-
-export const selectProduct = (product) => ({
-  type: 'SELECT_PRODUCT',
-  selectedProduct: product
-})

@@ -2,6 +2,7 @@ import { ImagePicker } from 'expo'
 import firebase from '../common/firebase'
 import { ActionSheet } from 'native-base'
 import { toast } from '../common/helpers'
+import { chooseImage } from './creators/image'
 
 export const pickImage = () => {
   return async (dispatch) => {
@@ -10,7 +11,7 @@ export const pickImage = () => {
       allowsEditing: false,
       aspect: [4, 3]
     })
-    dispatch({ type: 'IMAGE_CHOSEN', image: pickedImage })
+    dispatch(chooseImage(pickedImage))
   }
 }
 
@@ -21,7 +22,7 @@ export const takeImage = () => {
       allowsEditing: false,
       aspect: [4, 3]
     })
-    dispatch({ type: 'IMAGE_CHOSEN', image: takenImage })
+    dispatch(chooseImage(takenImage))
   }
 }
 
